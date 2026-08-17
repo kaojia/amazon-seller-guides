@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>亞馬遜澳洲站 — 經營指導手冊</title>
+<style>
+:root{
+  --navy:#0F2E4C; --navy-2:#1B4771; --ink:#1F2937; --ink-2:#4B5563; --ink-3:#6B7280;
+  --line:#E3E8EE; --bg:#F7F9FB; --card:#FFFFFF;
+  --amber:#B45309; --amber-bg:#FFF8EB; --amber-line:#F0C987;
+  --red:#B42318; --red-bg:#FEF3F2; --red-line:#F3B4AE;
+  --green:#0E7A4F; --green-bg:#EFFAF4; --green-line:#A7DCC1;
+  --blue:#1B4771; --blue-bg:#EEF4FA;
+  --s1:#0E7A4F; --s2:#1B4771; --s3:#B45309; --s4:#4B5563;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:150px}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Microsoft JhengHei","Noto Sans TC","PingFang TC","Helvetica Neue",Arial,sans-serif;
+  font-size:14px; line-height:1.75; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px; margin:0 auto; padding:0 20px}
+a{color:var(--navy-2)}
+a:hover{color:var(--amber)}
+
+.disclaimer{background:#FFFBEB; border-bottom:1px solid var(--amber-line); font-size:12.5px; color:#7C4A03; padding:9px 0}
+.disclaimer .wrap{display:flex; gap:8px; align-items:flex-start}
+
+.hero{background:linear-gradient(160deg,var(--navy) 0%,#173A5E 55%,#1B4771 100%); color:#fff; padding:34px 0 30px}
+.hero h1{margin:0 0 6px; font-size:29px; line-height:1.3; letter-spacing:.3px}
+.hero .sub{color:#C6D6E6; font-size:14px}
+.hero .who{margin-top:14px; font-size:13px; color:#DCE7F1}
+.hero .who b{color:#fff}
+.hero .contact{margin-top:10px; display:flex; flex-wrap:wrap; gap:8px 18px; font-size:13px}
+.hero .contact a{color:#FFD9A0; text-decoration:none; border-bottom:1px dotted #FFD9A0}
+.mk{display:flex; flex-wrap:wrap; gap:6px; margin-top:16px}
+.mk span{background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:3px 11px; font-size:12.5px}
+.mk span.core{background:#F0A020; border-color:#F0A020; color:#3B2200; font-weight:700}
+.siteswitch{margin-top:16px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:13px}
+.siteswitch .ss-label{color:#C6D6E6}
+.siteswitch .ss-cur{background:#F0A020; color:#3B2200; font-weight:700; border-radius:999px; padding:4px 13px}
+.siteswitch a{background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.3); color:#fff; text-decoration:none; border-radius:999px; padding:4px 13px}
+.siteswitch a:hover{background:rgba(255,255,255,.24); color:#fff}
+
+.sidenav{
+  position:fixed; top:0; left:0; width:212px; height:100vh; z-index:70;
+  background:#fff; border-right:1px solid var(--line); display:flex; flex-direction:column;
+  transform:translateX(-100%); transition:transform .25s ease;
+}
+.sidenav .sn-head{ background:linear-gradient(160deg,var(--navy),#1B4771); color:#fff; padding:14px 16px 12px; flex:0 0 auto; }
+.sidenav .sn-head .t{font-size:14px; font-weight:700; line-height:1.4}
+.sidenav .sn-head .s{font-size:11px; color:#C6D6E6; margin-top:2px}
+.sidenav .sn-list{flex:1 1 auto; overflow-y:auto; padding:8px 8px 16px}
+.sidenav .sn-stage{font-size:11px; font-weight:700; color:var(--ink-3); padding:10px 8px 3px; letter-spacing:.5px}
+.sidenav a{ display:flex; gap:8px; align-items:baseline; padding:5px 9px; border-radius:7px; text-decoration:none; color:var(--ink-2); font-size:12.5px; line-height:1.4; }
+.sidenav a:hover{background:var(--blue-bg); color:var(--navy)}
+.sidenav a .n{flex:0 0 auto; width:20px; font-size:11px; font-weight:700; color:var(--ink-3)}
+.sidenav a.active{background:var(--navy); color:#fff; font-weight:700}
+.sidenav a.active .n{color:#FFD9A0}
+.sn-backdrop{position:fixed; inset:0; background:rgba(15,46,76,.4); z-index:65; display:none}
+.sn-backdrop.show{display:block}
+.navtoggle{ position:fixed; right:18px; bottom:66px; z-index:60; width:40px; height:40px; border-radius:50%; background:#fff; color:var(--navy); border:1px solid var(--line); cursor:pointer; font-size:17px; box-shadow:0 3px 10px rgba(0,0,0,.18); }
+@media(min-width:1200px){ body{padding-left:212px} .sidenav{transform:none} .navtoggle{display:none} .sn-backdrop{display:none !important} }
+
+.bar{position:sticky; top:0; z-index:50; background:rgba(255,255,255,.97); border-bottom:1px solid var(--line); backdrop-filter:blur(6px)}
+.bar .wrap{padding:10px 20px}
+.bar-row{display:flex; flex-wrap:wrap; gap:10px 16px; align-items:center}
+.search{flex:1 1 240px; min-width:200px; position:relative}
+.search input{width:100%; padding:8px 12px 8px 32px; border:1px solid var(--line); border-radius:8px; font-size:13.5px; font-family:inherit; background:#fff}
+.search input:focus{outline:2px solid #BBD3E9; border-color:var(--navy-2)}
+.search::before{content:"🔍"; position:absolute; left:10px; top:7px; font-size:13px; opacity:.6}
+.seg{display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink-3)}
+.seg b{color:var(--ink-2); font-weight:700; margin-right:2px}
+.chip{border:1px solid var(--line); background:#fff; border-radius:999px; padding:4px 11px; font-size:12.5px; cursor:pointer; font-family:inherit; color:var(--ink-2)}
+.chip:hover{border-color:var(--navy-2)}
+.chip.on{background:var(--navy); border-color:var(--navy); color:#fff; font-weight:700}
+.prog{display:flex; align-items:center; gap:9px; font-size:12.5px; color:var(--ink-2); flex:0 0 auto}
+.progbar{width:120px; height:7px; background:#E7ECF1; border-radius:99px; overflow:hidden}
+.progbar i{display:block; height:100%; width:0; background:linear-gradient(90deg,#0E7A4F,#2FA36B); transition:width .3s}
+.btn-reset{border:none; background:none; color:var(--ink-3); font-size:12px; cursor:pointer; text-decoration:underline; font-family:inherit}
+
+section.block{margin:26px 0}
+.card{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px 22px; margin-bottom:16px}
+h2.h{font-size:19px; margin:0 0 4px; color:var(--navy); letter-spacing:.2px}
+h3{font-size:15.5px; margin:20px 0 8px; color:var(--navy-2)}
+h4{font-size:14px; margin:16px 0 6px; color:var(--ink)}
+p{margin:8px 0}
+ul,ol{margin:8px 0 8px 0; padding-left:22px}
+li{margin:4px 0}
+small,.small{font-size:12.5px; color:var(--ink-3)}
+.mono{font-family:Consolas,"Courier New",monospace; background:#F1F4F7; padding:1px 5px; border-radius:4px; font-size:12.5px}
+
+.toc{background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px 22px}
+.toc h2{margin:0 0 12px; font-size:16px; color:var(--navy)}
+.toc-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px}
+.toc-col .st{font-size:12.5px; font-weight:700; padding:3px 9px; border-radius:6px; display:inline-block; margin-bottom:7px}
+.st.s1{background:var(--green-bg); color:var(--s1)} .st.s2{background:var(--blue-bg); color:var(--s2)}
+.st.s3{background:var(--amber-bg); color:var(--s3)} .st.s4{background:#F1F3F5; color:var(--s4)}
+.toc-col ol{list-style:none; margin:0; padding:0}
+.toc-col li{margin:3px 0}
+.toc-col ol a{display:block; padding:4px 8px; border-radius:6px; text-decoration:none; color:var(--ink-2); font-size:13.5px}
+.toc-col ol a:hover{background:var(--blue-bg); color:var(--navy)}
+.toc-tools{margin-top:14px; font-size:12.5px; line-height:1.9; color:var(--ink-3)}
+.toc-tools a{color:var(--navy-2); text-decoration:none; border-bottom:1px dotted #A9C2D8}
+.toc-tools a:hover{color:var(--amber); border-color:var(--amber)}
+.toc-tools b{color:var(--ink-2); display:block; margin-top:8px}
+.toc-col a .n{display:inline-block; width:26px; color:var(--ink-3); font-size:12px}
+
+.paths{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.path{background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px 20px; border-top:4px solid var(--navy-2)}
+.path.newb{border-top-color:var(--s1)}
+.path h3{margin:0 0 3px; font-size:15.5px}
+.path .tag{font-size:12.5px; color:var(--ink-3); margin-bottom:10px}
+.path ol{margin:0; padding-left:20px; font-size:13.5px}
+.path ol li{margin:5px 0}
+.path .hi{color:var(--red); font-weight:700}
+
+.tl{position:relative; margin:14px 0 0; padding-left:8px}
+.tl-item{display:grid; grid-template-columns:104px 1fr; gap:14px; padding:12px 0; border-bottom:1px dashed var(--line)}
+.tl-item:last-child{border-bottom:none}
+.tl-when{font-weight:700; font-size:13px; color:var(--navy)}
+.tl-when em{display:block; font-style:normal; font-size:11.5px; color:var(--ink-3); font-weight:400}
+.tl-what ul{margin:0; padding-left:18px}
+
+.chapter{background:#fff; border:1px solid var(--line); border-radius:12px; margin-bottom:16px; overflow:hidden}
+.chapter.hide{display:none}
+.ch-head{display:flex; gap:14px; align-items:flex-start; padding:18px 22px 14px; border-bottom:1px solid var(--line); background:#FCFDFE}
+.ch-num{flex:0 0 auto; width:34px; height:34px; border-radius:9px; background:var(--navy); color:#fff; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center}
+.chapter[data-stage="1"] .ch-num{background:var(--s1)}
+.chapter[data-stage="2"] .ch-num{background:var(--s2)}
+.chapter[data-stage="3"] .ch-num{background:var(--s3)}
+.chapter[data-stage="4"] .ch-num{background:var(--s4)}
+.ch-t{flex:1}
+.ch-t h2{margin:0; font-size:18px; color:var(--navy)}
+.ch-t .badges{margin-top:5px; display:flex; gap:6px; flex-wrap:wrap}
+.badge{font-size:11.5px; padding:2px 8px; border-radius:999px; background:#F1F4F7; color:var(--ink-2); border:1px solid var(--line)}
+.badge.au{background:#FFF1E6; color:#8A4B00; border-color:#F3CBA5; font-weight:700}
+.ch-body{padding:18px 22px 22px}
+.keypoint{background:var(--blue-bg); border-left:4px solid var(--navy-2); padding:11px 14px; border-radius:0 8px 8px 0; margin:0 0 16px; font-size:13.5px}
+.keypoint b{color:var(--navy)}
+
+.stage-band{ margin:30px 0 16px; padding:13px 22px; border-radius:10px; display:flex; align-items:center; gap:12px; flex-wrap:wrap; color:#fff; box-shadow:0 1px 3px rgba(15,46,76,.12); }
+.stage-band.hide{display:none}
+.stage-band .sb-t{font-size:17px; font-weight:700; letter-spacing:.5px}
+.stage-band .sb-d{font-size:13px; opacity:.92}
+.stage-band[data-stage="1"]{background:linear-gradient(100deg,#0E7A4F,#159C64)}
+.stage-band[data-stage="2"]{background:linear-gradient(100deg,#1B4771,#2A6098)}
+.stage-band[data-stage="3"]{background:linear-gradient(100deg,#B45309,#D9750F)}
+.stage-band[data-stage="4"]{background:linear-gradient(100deg,#4B5563,#6B7280)}
+
+.steps{display:grid; grid-template-columns:repeat(5,1fr); gap:0; margin:16px 0 6px}
+.step{position:relative; background:#fff; border:1px solid var(--line); padding:14px 12px 13px; text-align:center}
+.step:first-child{border-radius:10px 0 0 10px}
+.step:last-child{border-radius:0 10px 10px 0}
+.step + .step{border-left:none}
+.step .sn{font-size:11px; font-weight:700; color:var(--amber); letter-spacing:1px}
+.step .si{font-size:22px; line-height:1.4; margin:2px 0}
+.step .sh{font-size:13.5px; font-weight:700; color:var(--navy); margin-bottom:5px}
+.step ul{margin:0; padding:0; list-style:none; font-size:12px; color:var(--ink-2); line-height:1.65}
+.step::after{ content:"›"; position:absolute; right:-9px; top:50%; transform:translateY(-50%); width:18px; height:18px; border-radius:50%; background:var(--navy); color:#fff; font-size:12px; line-height:18px; text-align:center; z-index:2; }
+.step:last-child::after{display:none}
+@media(max-width:760px){
+  .steps{grid-template-columns:1fr}
+  .step{border-radius:0 !important; border-left:1px solid var(--line) !important}
+  .step:first-child{border-radius:10px 10px 0 0 !important}
+  .step:last-child{border-radius:0 0 10px 10px !important}
+  .step + .step{border-top:none}
+  .step::after{right:50%; top:auto; bottom:-9px; transform:translateX(50%) rotate(90deg)}
+}
+
+.faq{counter-reset:faq}
+.faq details.acc>summary{counter-increment:faq}
+.faq details.acc>summary::before{ content:counter(faq) "."; color:var(--amber); font-weight:700; font-size:13px; min-width:15px; text-align:right; }
+.faq details.acc[open]>summary::before{content:counter(faq) "."}
+
+details.more{border:1px dashed var(--line); border-radius:8px; margin:16px 0 0; background:#FCFDFE}
+details.more>summary{cursor:pointer; padding:10px 14px; font-size:13px; font-weight:700; color:var(--ink-2); list-style:none}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::before{content:"▸ "; color:var(--amber)}
+details.more[open]>summary::before{content:"▾ "}
+details.more .acc-body{padding:4px 15px 14px}
+
+.note{border-radius:8px; padding:12px 15px; margin:14px 0; font-size:13.5px; border:1px solid}
+.note.warn{background:var(--amber-bg); border-color:var(--amber-line); color:#6B3F02}
+.note.danger{background:var(--red-bg); border-color:var(--red-line); color:#7A1C13}
+.note.ok{background:var(--green-bg); border-color:var(--green-line); color:#0A5537}
+.note.info{background:var(--blue-bg); border-color:#C3D8EA; color:#173A5E}
+.note b{font-weight:700}
+.note ul{margin:6px 0 0}
+
+.checklist{background:#FBFCFD; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:14px 0}
+.checklist .ttl{font-size:13px; font-weight:700; color:var(--navy); margin-bottom:8px}
+.checklist label{display:flex; gap:9px; align-items:flex-start; padding:5px 0; font-size:13.5px; cursor:pointer}
+.checklist input{margin-top:4px; width:15px; height:15px; accent-color:#0E7A4F; flex:0 0 auto; cursor:pointer}
+.checklist input:checked + span{color:var(--ink-3); text-decoration:line-through}
+
+.tw{overflow-x:auto; margin:14px 0}
+table{border-collapse:collapse; width:100%; font-size:13px; background:#fff}
+th,td{border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top}
+th{background:#F4F7FA; color:var(--navy); font-weight:700; font-size:12.5px; white-space:nowrap}
+td.ctr,th.ctr{text-align:center}
+tbody tr:nth-child(even){background:#FCFDFE}
+.yes{color:var(--green); font-weight:700}
+.no{color:var(--ink-3)}
+.tier1{color:var(--red); font-weight:700}
+
+details.acc{border:1px solid var(--line); border-radius:8px; margin:8px 0; background:#fff}
+details.acc>summary{cursor:pointer; padding:11px 14px; font-size:13.5px; font-weight:700; color:var(--navy-2); list-style:none; display:flex; gap:9px; align-items:center}
+details.acc>summary::-webkit-details-marker{display:none}
+details.acc>summary::before{content:"▸"; color:var(--amber); font-size:12px; flex:0 0 auto}
+details.acc[open]>summary::before{content:"▾"}
+details.acc[open]>summary{border-bottom:1px solid var(--line); background:#FCFDFE}
+.acc-body{padding:12px 15px 15px; font-size:13.5px}
+.acc-body>*:first-child{margin-top:0}
+
+.links{display:flex; flex-wrap:wrap; gap:8px; margin:12px 0}
+.links a{display:inline-block; background:#fff; border:1px solid var(--line); border-radius:8px; padding:7px 12px; font-size:13px; text-decoration:none; color:var(--navy-2)}
+.links a:hover{border-color:var(--navy-2); background:var(--blue-bg)}
+
+.tool{background:linear-gradient(180deg,#F4F8FC,#FFFFFF); border:1px solid #C9DCEC; border-radius:12px; padding:18px 20px; margin:16px 0}
+.tool h3{margin:0 0 3px; font-size:15.5px; color:var(--navy)}
+.tool .lead{font-size:12.5px; color:var(--ink-3); margin-bottom:12px}
+.q{margin:12px 0}
+.q .qt{font-size:13.5px; font-weight:700; color:var(--ink); margin-bottom:6px}
+.opts{display:flex; flex-wrap:wrap; gap:7px}
+.opt{border:1px solid var(--line); background:#fff; border-radius:8px; padding:6px 12px; font-size:13px; cursor:pointer; font-family:inherit; color:var(--ink-2)}
+.opt:hover{border-color:var(--navy-2)}
+.opt.on{background:var(--navy-2); border-color:var(--navy-2); color:#fff; font-weight:700}
+.result{margin-top:14px; padding:14px 16px; border-radius:10px; background:#fff; border:1px solid var(--line); font-size:13.5px; display:none}
+.result.show{display:block}
+.result h4{margin:0 0 6px; color:var(--navy); font-size:14.5px}
+.result .pill{display:inline-block; background:var(--green-bg); color:var(--s1); border:1px solid var(--green-line); border-radius:999px; padding:2px 10px; font-size:12.5px; font-weight:700; margin-bottom:8px}
+.result ul{margin:8px 0 0; padding-left:20px}
+.cbs{display:flex; flex-wrap:wrap; gap:6px 14px}
+.cbs label{display:flex; gap:6px; align-items:center; font-size:13px; cursor:pointer; background:#fff; border:1px solid var(--line); border-radius:8px; padding:5px 11px}
+.cbs input{accent-color:#1B4771; cursor:pointer}
+
+footer{background:var(--navy); color:#C6D6E6; margin-top:34px; padding:26px 0 30px; font-size:13px}
+footer a{color:#FFD9A0}
+footer .fw{display:flex; flex-wrap:wrap; gap:18px; justify-content:space-between; align-items:flex-start}
+footer .fd{font-size:12px; color:#93AABF; margin-top:14px; border-top:1px solid rgba(255,255,255,.14); padding-top:12px; line-height:1.7}
+.totop{position:fixed; right:18px; bottom:18px; z-index:60; background:var(--navy); color:#fff; border:none; width:40px; height:40px; border-radius:50%; cursor:pointer; font-size:16px; box-shadow:0 3px 10px rgba(0,0,0,.2); display:none}
+.totop.show{display:block}
+.nores{background:#fff; border:1px dashed var(--line); border-radius:10px; padding:22px; text-align:center; color:var(--ink-3); font-size:13.5px; display:none}
+.nores.show{display:block}
+mark{background:#FFF1A8; color:inherit; padding:0 1px}
+
+@media(max-width:760px){
+  .paths{grid-template-columns:1fr}
+  .hero h1{font-size:23px}
+  .tl-item{grid-template-columns:1fr; gap:4px}
+  .prog{order:9}
+}
+@media print{
+  .bar,.totop,.tool .opts{display:none}
+  .chapter{page-break-inside:avoid; border:1px solid #ccc}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+
+<div class="disclaimer"><div class="wrap">
+  <span>⚠️</span>
+  <span>本手冊為亞馬遜客戶經理為輔導客戶額外整理之參考資料，內容僅供輔助理解，<b>不構成法律、稅務或合規意見</b>。費率、優惠、大促日期與法規時程請一律以
+  <a href="https://sellercentral.amazon.com.au/" target="_blank" rel="noopener">賣家後台</a>、
+  <a href="https://gs.amazon.com.tw/" target="_blank" rel="noopener">亞馬遜全球開店官方公告</a>
+  及澳洲主管機關（如澳洲稅務局 ATO）最新公告為準。稅務與合規事項請與您的稅代／合規顧問確認。</span>
+</div></div>
+
+<nav class="sidenav" id="sidenav" aria-label="章節導覽">
+  <div class="sn-head">
+    <div class="t">🦘 澳洲站經營手冊</div>
+    <div class="s">01–13 章節快速跳轉</div>
+  </div>
+  <div class="sn-list">
+    <div class="sn-stage">🟢 準備期</div>
+    <a href="#sec01"><span class="n">01</span>認識市場與新賣家優惠</a>
+    <a href="#sec02"><span class="n">02</span>註冊開通帳號</a>
+    <a href="#sec03"><span class="n">03</span>澳洲站四大成本</a>
+    <a href="#sec04"><span class="n">04</span>金流稅務 GST</a>
+    <div class="sn-stage">🔵 上架期</div>
+    <a href="#sec05"><span class="n">05</span>品牌授權與註冊</a>
+    <a href="#sec06"><span class="n">06</span>商品上架</a>
+    <a href="#sec07"><span class="n">07</span>物流與 FBA・棧板</a>
+    <div class="sn-stage">🟡 成長期</div>
+    <a href="#sec08"><span class="n">08</span>VINE 計畫與拿評論</a>
+    <a href="#sec09"><span class="n">09</span>新品冷啟動</a>
+    <a href="#sec10"><span class="n">10</span>促銷與全年檔期</a>
+    <a href="#sec11"><span class="n">11</span>亞馬遜企業購 B2B</a>
+    <div class="sn-stage">⚪ 資源</div>
+    <a href="#sec12"><span class="n">12</span>常見問題</a>
+    <a href="#sec13"><span class="n">13</span>服務商與官方資源</a>
+  </div>
+</nav>
+<div class="sn-backdrop" id="snBackdrop"></div>
+<button class="navtoggle" id="navToggle" title="章節導覽" aria-label="開啟章節導覽">☰</button>
+
+<header class="hero"><div class="wrap">
+  <h1>亞馬遜澳洲站 — 經營指導手冊</h1>
+  <div class="sub">從註冊 KYC 到 FBA、VINE 與企業購：台灣賣家開站澳洲（amazon.com.au）的完整路徑圖</div>
+  <!-- 切換站點：預設為「同一父資料夾下的兄弟資料夾」相對路徑。若兩份手冊部署成「各自獨立的 GitHub 倉庫」，
+       請把下面 href 改成中東站的完整網址，例如 https://<帳號>.github.io/amazon-mena-seller-guide/ -->
+  <div class="siteswitch">
+    <span class="ss-label">切換站點：</span>
+    <span class="ss-cur">🇦🇺 澳洲站（目前）</span>
+    <a href="../mena-seller-guide/index.html">🌐 前往中東站 →</a>
+  </div>
+  <div class="mk">
+    <span class="core">🇦🇺 澳洲 amazon.com.au</span>
+    <span>GST 10%</span>
+    <span>VINE 計畫可用</span>
+    <span>企業購 B2B</span>
+  </div>
+  <div class="who">編輯者：亞馬遜全球開店 澳洲站客戶經理　業務拓展經理 <b>Jenny</b></div>
+  <div class="contact">
+    <span>✉️ Deal／庫容提報與諮詢：<a href="mailto:chiawenk@amazon.com">chiawenk@amazon.com</a></span>
+  </div>
+</div></header>
+
+<div class="bar"><div class="wrap"><div class="bar-row">
+  <div class="search"><input id="q" type="search" placeholder="搜尋章節：GST、FBA、棧板、VINE、企業購、Deal、庫容…" autocomplete="off"></div>
+  <div class="seg"><b>👥 身分</b>
+    <button class="chip on" data-who="all">全部</button>
+    <button class="chip" data-who="new">🆕 新賣家</button>
+    <button class="chip" data-who="exist">🔄 跨站點賣家</button>
+  </div>
+  <div class="seg"><b>🎯 階段</b>
+    <button class="chip on" data-stage="all">全部</button>
+    <button class="chip" data-stage="1">🟢 準備</button>
+    <button class="chip" data-stage="2">🔵 上架</button>
+    <button class="chip" data-stage="3">🟡 成長</button>
+    <button class="chip" data-stage="4">⚪ 資源</button>
+  </div>
+  <div class="prog">
+    <span id="ptext">0 / 0</span>
+    <div class="progbar"><i id="pbar"></i></div>
+    <button class="btn-reset" id="preset">清除</button>
+  </div>
+</div></div></div>
+
+<div class="wrap">
+
+<!-- ============ TOC ============ -->
+<section class="block">
+<div class="toc">
+  <h2>📑 章節目錄</h2>
+  <div class="toc-grid">
+    <div class="toc-col">
+      <span class="st s1">🟢 階段一：準備期</span>
+      <ol>
+        <li><a href="#sec01"><span class="n">01</span>認識澳洲市場與新賣家優惠</a></li>
+        <li><a href="#sec02"><span class="n">02</span>註冊開通帳號</a></li>
+        <li><a href="#sec03"><span class="n">03</span>澳洲站四大成本</a></li>
+        <li><a href="#sec04"><span class="n">04</span>金流稅務：GST 與發票</a></li>
+      </ol>
+    </div>
+    <div class="toc-col">
+      <span class="st s2">🔵 階段二：上架期</span>
+      <ol>
+        <li><a href="#sec05"><span class="n">05</span>品牌授權與品牌註冊</a></li>
+        <li><a href="#sec06"><span class="n">06</span>商品上架（跨站搬遷／GTIN 豁免）</a></li>
+        <li><a href="#sec07"><span class="n">07</span>物流與 FBA（棧板／庫容）</a></li>
+      </ol>
+      <span class="st s3" style="margin-top:12px">🟡 階段三：成長期</span>
+      <ol>
+        <li><a href="#sec08"><span class="n">08</span>VINE 計畫與拿評論</a></li>
+        <li><a href="#sec09"><span class="n">09</span>新品冷啟動與出單加速</a></li>
+        <li><a href="#sec10"><span class="n">10</span>促銷與澳洲全年檔期</a></li>
+        <li><a href="#sec11"><span class="n">11</span>亞馬遜企業購 B2B</a></li>
+      </ol>
+    </div>
+    <div class="toc-col">
+      <span class="st s4">⚪ 階段四：資源與支援</span>
+      <ol>
+        <li><a href="#sec12"><span class="n">12</span>常見問題</a></li>
+        <li><a href="#sec13"><span class="n">13</span>服務商、學習資源與官方連結</a></li>
+      </ol>
+      <div class="toc-tools">
+        <b>🛠 本頁互動工具</b>
+        <a href="#tool-deal">Deal 促銷資格檢查器</a>　我能提報哪些 Deal？<br>
+        <a href="#tool-b2b">企業購 B2B 啟用助手</a>　ABN／SSF／GST 發票怎麼辦？
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ============ 澳洲站四個關鍵不同 ============ -->
+<section class="block">
+<div class="card" style="border-left:4px solid var(--amber)">
+  <h2 class="h">🧭 先看這裡：澳洲站與美／中東站最大的四個不同</h2>
+  <p class="small" style="margin-top:2px">澳洲站的機會不在合規門檻，而在幾個「別人沒有、你要主動用起來」的功能，以及澳洲特有的物流與稅務規範。</p>
+  <div class="tw"><table>
+    <thead><tr><th style="width:130px">差異點</th><th>澳洲站的狀況</th><th style="width:150px">要主動做的事</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>VINE 計畫可用</b></td>
+        <td>VINE 於 2024 年上線澳洲站，並支援 <b>Pre-Release 預先發佈</b>：新品建立 FBA 後即可報名，<b>上架首日就能自帶最多 30 條真實評論</b>。中東站沒有這功能。</td>
+        <td>新品上架前先報 VINE</td>
+      </tr>
+      <tr>
+        <td><b>企業購 B2B 是大藍海</b></td>
+        <td>澳洲 B2B 市場 2025 年估達 <b>3,750 億澳元</b>；頭部賣家 90% 以上都開通企業購。開通<b>無額外費用</b>，只需提供 <b>ABN 或 SSF</b>。</td>
+        <td>上傳 ABN／SSF 開通</td>
+      </tr>
+      <tr>
+        <td><b>GST 10% + 發票規則</b></td>
+        <td>澳洲統一 <b>GST 10%</b>，售價須含稅。B2C 消費者索取發票時須處理（建議 28 天內）；B2B 若已註冊 GST 須開立<b>含 ABN 的稅務發票</b>。</td>
+        <td>售價含 GST、備妥發票</td>
+      </tr>
+      <tr>
+        <td><b>棧板 ISPM-15 木材檢疫</b></td>
+        <td>發貨到澳洲 FC 的棧板<b>只收木製棧板</b>（首選澳洲標準 1165×1165mm）；海外木質包裝須符合 <b>ISPM-15</b> 熱處理／燻蒸，否則海關可能扣押銷毀。</td>
+        <td>用合規木棧板+檢疫章</td>
+      </tr>
+    </tbody>
+  </table></div>
+  <div class="note danger">
+    <b>🔴 兩個最容易被忽略的重點：</b>
+    <ul>
+      <li>「新品沒評論好難起步」——澳洲站可用 <b>VINE Pre-Release</b>，上架首日就能有評論，別讓新品裸奔（見 <a href="#sec08">第 08 章</a>）。</li>
+      <li>「我只做散客就好」——澳洲 B2B 體量是 B2C 的數倍，開通企業購<b>不需新增 listing、不需分倉、零額外費用</b>，等於免費多開一個流量入口（見 <a href="#sec11">第 11 章</a>）。</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- ============ PATHS ============ -->
+<section class="block">
+<h2 class="h" style="margin-bottom:10px">📌 你是哪種賣家？選擇你的閱讀路徑</h2>
+<div class="paths">
+  <div class="path newb">
+    <h3>🆕 新賣家</h3>
+    <div class="tag">第一次在亞馬遜上銷售</div>
+    <ol>
+      <li><a href="#sec01">【01】認識市場＋優惠</a> — 新品入倉優惠</li>
+      <li><a href="#sec02">【02】註冊開通帳號</a> — 備件與 KYC 視訊</li>
+      <li><a href="#sec04">【04】GST</a> — 售價含稅、發票義務</li>
+      <li><a href="#sec06">【06】商品上架</a> — GTIN 豁免免條碼</li>
+      <li><a href="#sec08">【08】VINE</a> — <span class="hi">上架首日 30 條評論</span></li>
+      <li><a href="#sec09">【09】新品冷啟動</a> — 出第一單前 5 件事</li>
+    </ol>
+  </div>
+  <div class="path">
+    <h3>🔄 跨站點賣家（已有美／歐帳號）</h3>
+    <div class="tag">想把既有商品拓展到澳洲</div>
+    <ol>
+      <li><a href="#sec05">【05】品牌授權</a> — 從北美站授權到澳洲</li>
+      <li><a href="#sec07">【07】開啟澳洲站 FBA</a> — <span class="hi">搬遷前提</span></li>
+      <li><a href="#sec06">【06】跨站搬遷 listing</a> — 建議用方法 2</li>
+      <li><a href="#sec06">關閉全球跟賣</a> — 避免 Amazon US 搶購物車</li>
+      <li><a href="#sec11">【11】開通企業購</a> — 免費多一個 B2B 入口</li>
+      <li><a href="#sec10">【10】促銷檔期</a> — Deal 提報最大化營收</li>
+    </ol>
+  </div>
+</div>
+</section>
+
+<!-- ============ Q4 快訊 ============ -->
+<section class="block">
+<div class="card" style="border-left:4px solid var(--red)">
+  <h2 class="h">✨ 2026 Q4 三大促：Prime Big Deal Days、Black Friday Sale、Boxing Day</h2>
+  <p class="small">Q4 是 Amazon Australia 全年最大購物季，Deal 提報已在 Seller Central 開放。以下為活動概覽與 Best Deal 資格。</p>
+  <div class="tw"><table>
+    <thead><tr><th>活動</th><th class="ctr">天數</th><th class="ctr">Deal 提報截止</th><th>折扣（Best Deal）</th><th>星等</th></tr></thead>
+    <tbody>
+      <tr><td><b>Prime Big Deal Days</b></td><td class="ctr">7 天</td><td class="ctr">2026/9/3</td><td>≥20% off 或降 $300</td><td>4 星+（新品可 0）</td></tr>
+      <tr><td><b>Black Friday Sale</b></td><td class="ctr">14 天</td><td class="ctr">2026/10/16</td><td>≥15% off 或降 $300</td><td>4 星+（新品可 0）</td></tr>
+      <tr><td><b>Boxing Day</b>（12/24–12/30）</td><td class="ctr">7 天</td><td class="ctr">2026/12/18</td><td>≥15% off 或降 $100</td><td>3 星+（新品可 0）</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note info"><b>出貨方式：</b>FBA 及 MFN 皆可；<b>MFN 配送要求：</b>雪梨、墨爾本、布里斯本都會區須免運。後台沒推薦的 ASIN 想參加，填手動提報表單並寄 Excel 至 <a href="mailto:chiawenk@amazon.com">chiawenk@amazon.com</a>，提醒經理 Jenny。三個活動都要參加須分別提交三個連結。完整全年檔期見 <a href="#sec10">第 10 章</a>。</div>
+</div>
+</section>
+
+<div class="stage-band" data-stage="1">
+  <span class="sb-t">🟢 階段一：準備期</span>
+  <span class="sb-d">01–04　認識市場、註冊 KYC、成本、GST 稅務　—　<b>開站的成敗在這個階段就決定了</b></span>
+</div>
+
+<!-- ==================== 01 ==================== -->
+<article class="chapter" id="sec01" data-stage="1" data-who="new">
+  <div class="ch-head">
+    <div class="ch-num">01</div>
+    <div class="ch-t">
+      <h2>認識澳洲市場與新賣家優惠 🎁</h2>
+      <div class="badges"><span class="badge">所有賣家</span><span class="badge au">新品入倉倉儲費減免</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>開站前先用成本計算機把毛利算清楚，並在<b>發貨前</b>註冊「亞馬遜物流新品入倉優惠計畫」以減免新品月度倉儲費。用後台自助註冊者，記得<b>提醒業務拓展經理</b>以取得至年底的免費輔導。</div>
+
+    <div class="checklist" data-cl="01">
+      <div class="ttl">✅ 本章行動清單</div>
+      <label><input type="checkbox"><span>已用澳洲站成本計算機試算目標商品毛利（含 GST 10%）</span></label>
+      <label><input type="checkbox"><span>已規劃在發貨前註冊「亞馬遜物流新品入倉優惠計畫」</span></label>
+      <label><input type="checkbox"><span>用後台自助註冊者，已提醒業務拓展經理以取得年底前免費輔導</span></label>
+      <label><input type="checkbox"><span>已評估是否開通企業購 B2B（澳洲重點藍海，見第 11 章）</span></label>
+    </div>
+
+    <h3>前台頁面與常用工具</h3>
+    <div class="links">
+      <a href="https://www.amazon.com.au/" target="_blank" rel="noopener">🇦🇺 澳洲站前台 amazon.com.au</a>
+      <a href="https://sellercentral.amazon.com.au/hz/fba/profitabilitycalculator/index?lang=zh-TW" target="_blank" rel="noopener">💰 澳洲站成本計算機（Revenue Calculator）</a>
+      <a href="https://amazontw.pse.is/9abp77" target="_blank" rel="noopener">🤝 澳洲站服務商清單</a>
+    </div>
+
+    <div class="note ok">
+      <b>⭐ 新品入倉優惠計畫（務必於發貨前註冊）：</b>後台搜尋框搜「亞馬遜物流新選品計畫」→ 點文章 →【立即註冊】，到控制面板確認註冊完成，即可享：
+      <ul>
+        <li><b>標準尺寸 / 大件 ASIN：</b>收到首件商品後 <b>90 天內</b>，每個新建父 ASIN 的<b>前 30 件</b>免月度倉儲費。</li>
+        <li><b>服裝鞋靴類：</b>收到首件商品後 <b>120 天內</b>，每個小／標準尺寸新建父 ASIN 的<b>前 100 件</b>免月度倉儲費。</li>
+      </ul>
+    </div>
+
+    <div class="note info"><b>💡 別忘了算清成本。</b>澳洲站仍有專業銷售方案費用、佣金、物流（含頭程與棧板）與營運成本。開賣前請用<b>成本計算機</b>試算，詳見 <a href="#sec03">第 03 章：四大成本</a>。</div>
+  </div>
+</article>
+
+<!-- ==================== 02 ==================== -->
+<article class="chapter" id="sec02" data-stage="1" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">02</div>
+    <div class="ch-t">
+      <h2>註冊開通帳號 🔐</h2>
+      <div class="badges"><span class="badge">所有賣家</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>澳洲站可由<b>後台自助註冊</b>或請<b>經理發送註冊連結</b>兩種方式開通。備件要備齊彩色電子檔，視訊驗證帶負責人證件正本。註冊過程可暫停但無法回上一步；看到【美國（待註冊）】不要點取消。</div>
+
+    <div class="checklist" data-cl="02">
+      <div class="ttl">✅ 本章行動清單</div>
+      <label><input type="checkbox"><span>已備妥：公司設立／變更登記表（彩色 PDF）</span></label>
+      <label><input type="checkbox"><span>已備妥：負責人身分證正反面或護照（彩色 JPG／PDF）</span></label>
+      <label><input type="checkbox"><span>已備妥：地址驗證文件（90 天內）與銀行驗證文件（180 天內）</span></label>
+      <label><input type="checkbox"><span>已備妥：可刷外幣信用卡（效期 ≥6 個月，已確認可海外扣款）</span></label>
+      <label><input type="checkbox"><span>視訊驗證已安排負責人出席並攜帶證件正本（無法出席須委託書）</span></label>
+    </div>
+
+    <h3>兩種註冊方式（擇一）</h3>
+    <div class="tw"><table>
+      <thead><tr><th style="width:150px">方式</th><th>操作路徑</th><th>注意</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>① 從賣家後台開啟</b></td>
+          <td>後台【庫存】→【全球銷售】→【澳洲】→ 建立澳洲銷售帳戶</td>
+          <td>⚠️ 用此法註冊者<b>務必提醒業務拓展經理</b>，以確保取得至年底的免費輔導服務。</td>
+        </tr>
+        <tr>
+          <td><b>② 由經理發送連結</b></td>
+          <td>與業務拓展經理聯絡，提供欲註冊澳洲站的 email（已有其他站點可用同一組）</td>
+          <td>⚠️ 透過連結註冊時，請確保登入帳號正是提供給經理的 email 帳號。</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <h3>註冊所需準備文件</h3>
+    <ul>
+      <li>👉 公司設立／變更登記表 — 彩色電子檔（PDF）</li>
+      <li>👉 公司負責人身分證正反面 或 護照 — 彩色電子檔（JPG／PDF）</li>
+      <li>👉 地址驗證文件 — 台灣公司可直接上傳公司文件；台灣以外公司請提供水電費帳單／信用卡帳單／銀行對帳單任一份，<b>出具日期需在 90 天內</b></li>
+      <li>👉 銀行帳戶驗證文件 — 銀行對帳單／交易明細，須清楚顯示帳戶持有人姓名、帳號、出具日期與銀行名稱，<b>出具日期須在 180 天內、完整文件非截圖</b>（Bank cover book 現已可接受）</li>
+      <li>👉 可刷外幣信用卡（Visa／Mastercard），<b>效期至少 6 個月以上</b>，並先向銀行確認可海外扣款</li>
+    </ul>
+
+    <div class="note danger">
+      <b>⚠️ 註冊提醒（務必閱讀）：</b>
+      <ul>
+        <li>註冊資料都填<b>營業登記與負責人</b>的資訊，不要填其他同事的。</li>
+        <li>註冊過程可以暫停，但<b>無法回上一步</b>。</li>
+        <li>視訊驗證記得攜帶<b>負責人證件正本</b>（身分證或護照）；負責人無法出席需準備<b>委託書</b>。</li>
+        <li>若過程中看到【美國（待註冊）】，<b>不要點「取消註冊」</b>，有問題請聯繫業務拓展經理。</li>
+      </ul>
+    </div>
+
+    <h3>兩步驗證（OTP 收不到？）</h3>
+    <p>常換手機、收不到亞馬遜 OTP 簡訊時，可用 <b>Google Authenticator App</b> 綁定亞馬遜帳號，改用 App 收驗證碼，避免收不到簡訊的問題。</p>
+
+    <details class="more"><summary>💡 賣家代號（Merchant Token）在哪查？</summary><div class="acc-body">
+      <p>Deal 提報、批量上傳都會用到<b>賣家代號（Merchant Token）</b>。查詢路徑：後台右上角齒輪【帳戶信息】頁面即可找到。</p>
+    </div></details>
+
+    <div class="links">
+      <a href="https://m.media-amazon.com/images/G/28/TWGS/SU/TW_GS_Registration_Guidebook_DSR_Grex.pdf" target="_blank" rel="noopener">🔗 註冊手冊（建議邊參考邊操作）</a>
+    </div>
+  </div>
+</article>
+
+<!-- ==================== 03 ==================== -->
+<article class="chapter" id="sec03" data-stage="1" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">03</div>
+    <div class="ch-t">
+      <h2>澳洲站四大成本 💰</h2>
+      <div class="badges"><span class="badge">所有賣家</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>澳洲站四大成本 = <b>開店費用（專業銷售方案）＋銷售佣金＋物流運輸＋營運成本</b>。開賣前務必用<b>成本計算機</b>把 FBA 費用與售價（含 GST 10%）算清楚。</div>
+
+    <div class="tw"><table>
+      <thead><tr><th style="width:120px">成本類別</th><th>內容</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>① 開店費用</b></td>
+          <td>專業銷售方案月費（實際金額以後台顯示為準）。</td>
+        </tr>
+        <tr>
+          <td><b>② 銷售佣金</b></td>
+          <td>依品類收取不同比例，詳見澳洲站後台佣金表。</td>
+        </tr>
+        <tr>
+          <td><b>③ 物流運輸</b></td>
+          <td>
+            <b>頭程物流：</b>發貨費用（依運輸方式與材積）、進出口清關費用／稅、<b>棧板成本（含 ISPM-15 木材處理）</b>。<br>
+            <b>FBA 成本：</b>請用成本計算機計算；倉儲費（依平均每日占用體積按月收取）、配送費、其他預處理費用。
+          </td>
+        </tr>
+        <tr>
+          <td><b>④ 營運成本</b></td>
+          <td>產品營運成本（人事、生產包裝、退換貨）；廣告（站內、站外）。</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="note warn"><b>💡 別忘了一次性費用（包括但不限於）：</b>GST 註冊（如適用）、產品認證、商標申請。這些不會每月發生，但開站初期要一次到位。</div>
+
+    <div class="links">
+      <a href="https://sellercentral.amazon.com.au/hz/fba/profitabilitycalculator/index?lang=zh-TW" target="_blank" rel="noopener">💰 澳洲站成本計算機（Revenue Calculator）</a>
+    </div>
+    <p class="small">💡 售價設定參考：北美價格 + GST 10%，或參考澳洲站競品價格。</p>
+  </div>
+</article>
+
+<!-- ==================== 04 ==================== -->
+<article class="chapter" id="sec04" data-stage="1" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">04</div>
+    <div class="ch-t">
+      <h2>金流稅務：GST 與發票 🧾</h2>
+      <div class="badges"><span class="badge">所有賣家</span><span class="badge au">GST 10%</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>澳洲商品及服務稅（GST）統一為 <b>10%</b>，發布價格須<b>含稅</b>。B2C 消費者索取發票時應及時處理（建議 28 天內）；<b>B2B（企業購）</b>若已註冊 GST，須為企業訂單開立<b>含 ABN 的稅務發票</b>。是否需要註冊 GST 及門檻，請與稅代確認。</div>
+
+    <div class="checklist" data-cl="04">
+      <div class="ttl">✅ 本章行動清單</div>
+      <label><input type="checkbox"><span>已完成美國稅務身分調查（帳戶開通後後台會要求）</span></label>
+      <label><input type="checkbox"><span>已與稅代確認是否需要／何時需要註冊澳洲 GST</span></label>
+      <label><input type="checkbox"><span>商品售價已含 GST 10%</span></label>
+      <label><input type="checkbox"><span>已了解 B2C 索票處理時效與 B2B 含 ABN 稅務發票義務</span></label>
+      <label><input type="checkbox"><span>已填妥收款資訊（收不到 OTP 有備援流程）</span></label>
+    </div>
+
+    <h3>什麼是 GST？</h3>
+    <p>GST（Goods and Services Tax，商品及服務稅）是澳洲的間接稅，稅率為 <b>10%</b>，最終由買家負擔。網頁上所有價格都須<b>包含適用的 GST</b>。是否達到強制註冊門檻、以及跨境賣家的 GST 義務，請以<b>澳洲稅務局（ATO）</b>規定與你的稅代建議為準。</p>
+    <div class="links"><a href="https://www.ato.gov.au/" target="_blank" rel="noopener">🔗 澳洲稅務局 ATO 官網</a></div>
+
+    <h3>發票（Invoice）義務</h3>
+    <div class="tw"><table>
+      <thead><tr><th style="width:120px">類型</th><th>發票規則</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>B2C（一般消費者）</b></td>
+          <td>賣家有責任在出貨確認後，及時為訂單開立合規發票（收據或稅務發票）。若客戶<b>索取發票</b>，賣家應<b>於 28 天內</b>處理；若未收到客戶要求，可不用強制處理。<b>不上傳發票不影響訂單履行與帳戶健康。</b></td>
+        </tr>
+        <tr>
+          <td><b>B2B（企業購）</b></td>
+          <td>若<b>已註冊 GST</b>，須為來自企業購客戶的訂單提供<b>含 ABN 的稅務發票</b>；若<b>未註冊 GST</b>，則無需提供含 ABN 的稅務發票（可上傳商業發票／收據）。</td>
+        </tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li>若消費者索票時尚未上傳稅號，可開具<b>不帶稅號的形式發票（commercial invoice）</b>。</li>
+      <li>如有批量開票需求，可用 <a href="https://developer-docs.amazon.com/sp-api/docs/create-and-upload-invoices#manually-upload-invoices" target="_blank" rel="noopener">SP-API Create and Upload Invoices</a> 與財務系統對接進行批量開票與上傳。</li>
+    </ul>
+
+    <h3>填寫收款資訊（收不到 OTP 怎麼辦？）</h3>
+    <p>齒輪【帳戶信息】→【付款信息】→【存款方式】→選擇【分配】後，系統會寄簡訊驗證，收到後按【批准／approve】。<b>若收不到簡訊</b>：進入右上角齒輪【登入設置】→ 關閉兩步驗證 → 編輯／刪除主要手機號碼 → 重新填寫收款資訊，系統會改將驗證碼寄到 <b>email</b>，再到 email 按【批准／approve】即可。</p>
+
+    <div class="links">
+      <a href="https://m.media-amazon.com/images/G/28/TWGS/SU/MENA_Tax_Interview.pdf" target="_blank" rel="noopener">🔗 美國稅務調查填寫指南</a>
+    </div>
+  </div>
+</article>
+
+<div class="stage-band" data-stage="2">
+  <span class="sb-t">🔵 階段二：上架期</span>
+  <span class="sb-d">05–07　品牌授權、商品上架、物流與 FBA　—　<b>跨站賣家的關鍵：先開澳洲站 FBA，再搬遷</b></span>
+</div>
+
+<!-- ==================== 05 ==================== -->
+<article class="chapter" id="sec05" data-stage="2" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">05</div>
+    <div class="ch-t">
+      <h2>品牌授權與品牌註冊 ™️</h2>
+      <div class="badges"><span class="badge">品牌型賣家</span><span class="badge au">授權 ≠ 品牌保護</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>若已在其他站點做過品牌備案，可透過<b>品牌授權</b>把品牌工具帶到澳洲站；但<b>沒有澳洲商標</b>時只能用品牌打造功能，<b>無法享受品牌保護、也無法投訴侵權（RaV）</b>。因此建議授權的同時評估申請澳洲當地商標。</div>
+
+    <h3>路徑 A：從既有站點授權品牌到澳洲（推薦跨站賣家）</h3>
+    <p>從曾註冊品牌的站點（如北美站）後台：Brand（品牌）→ Brand Registry（品牌授權）→「註冊您的品牌」→ 上方【管理】→【管理銷售帳戶】→ 右側【連結您的帳戶】→ 選【連結銷售夥伴帳戶】→【賣家平台帳戶】→【品牌代表】→ 依序填寫後按【連結銷售帳戶】送出。</p>
+
+    <h3>路徑 B：品牌註冊（尚未做過品牌備案者）</h3>
+    <p>先申請亞馬遜接受國（美／歐／日／新加坡／澳洲等）的商標，再於澳洲站後台進行品牌註冊。</p>
+    <h4>品牌註冊所需文件</h4>
+    <ul>
+      <li>商標局申請收據（PDF）：須為美／歐／日／新加坡／澳洲等國商標局申請（TM 標或 R 標皆可）</li>
+      <li>實拍產品／包裝圖片兩張：要有品牌名／logo（一張手持或扶產品入鏡、一張僅拍產品）</li>
+      <li>高清 logo 圖檔或文字圖片（建議黑白）</li>
+      <li>英文廠商與品牌合約書（PDF）：製造商／工廠方與品牌方的合約證明</li>
+      <li>英文 Invoice（PDF）：品牌方向工廠方採購的英文發票</li>
+    </ul>
+
+    <details class="acc"><summary>如何回覆品牌註冊驗證碼？</summary><div class="acc-body">
+      <p>提交品牌申請後，亞馬遜會將驗證碼提供給<b>申請商標的當地律所</b>。向律所索取驗證碼後回填至 case：<br>📌 路徑：管理 → 品牌申請 → 點選 Case ID（第二行）→ 按【回覆】，以下列模板回覆並送出：</p>
+      <p class="mono" style="display:block; white-space:pre-wrap">Dear Amazon Brand Registry,
+Our lawyer attorney for our brand has provided us the
+Verification code: XXXXXXX
+Thank you
+Brand Owner of XXXXXX</p>
+    </div></details>
+
+    <div class="note warn">
+      <b>⚠️ 用未註冊完成商標（Pending TM／PTM 標）備案要注意：</b>近期不少賣家用 PTM 標備案澳洲站失敗，因為<b>提交的是付款證明</b>。必須提供商標服務商在提交註冊後取得的<b>證書模板</b>（需單獨付費，從提交到取得約需 2 個月）。
+    </div>
+    <p class="small">若已用其他國商標局註冊品牌、且另有澳洲商標，可將<b>澳洲商標連結至原品牌</b>（新增澳洲品牌）。</p>
+
+    <div class="links">
+      <a href="https://m.media-amazon.com/images/G/28/TWGS/SU/CN_GS_Brand_Owner_3.1_Brand_Registration_TW.pdf#page=16" target="_blank" rel="noopener">🔗 品牌註冊步驟</a>
+      <a href="https://gs.amazon.com.tw/blog/how-to-enroll-in-amazon-brand-registry" target="_blank" rel="noopener">🔗 如何進行品牌註冊（文章）</a>
+    </div>
+  </div>
+</article>
+
+<!-- ==================== 06 ==================== -->
+<article class="chapter" id="sec06" data-stage="2" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">06</div>
+    <div class="ch-t">
+      <h2>商品上架（跨站搬遷／GTIN 豁免） 🌍</h2>
+      <div class="badges"><span class="badge">所有賣家</span><span class="badge au">建議優先用搬遷方法 2</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>跨站賣家<b>先開啟澳洲站 FBA</b>（見 <a href="#sec07">第 07 章</a>）與完成品牌授權，再用跨站搬遷把商品帶到澳洲；新賣家可用 <b>GTIN 豁免</b>或全新上架。需要協助可請經理提供<b>免費 30 分鐘一對一輔導</b>。</div>
+
+    <h3>跨站搬遷商品上架（三種方法）</h3>
+    <div class="tw"><table>
+      <thead><tr><th style="width:150px">方法</th><th>做法</th><th>適用</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>方法 1：原站點一鍵開通</b></td>
+          <td>至原站點（北美站）【庫存】→【管理所有庫存】→選定 ASIN →【編輯產品詳情頁】→【報價】往下滑，打開「澳洲」按鈕並填入報價、儲存。</td>
+          <td>通常 1–2 天完成同步；<b>只能搬子 ASIN</b>，有變體者搬完後到澳洲站重綁變體。同步不成功改用方法 2。</td>
+        </tr>
+        <tr>
+          <td><b>⭐ 方法 2：澳洲站輸入 ASIN（推薦）</b></td>
+          <td>澳洲站【添加商品】→【商品編碼】輸入欲搬遷的 ASIN，系統若找到即填 SKU、數量、價格、配送方式後提交，約 15 分鐘顯示在【管理所有庫存】。</td>
+          <td>FBA 賣家配送方式選【亞馬遜將會配送並提供客戶服務】。失敗會進【補全您的草稿】看原因。</td>
+        </tr>
+        <tr>
+          <td><b>方法 3：Excel 批量上傳</b></td>
+          <td>【添加商品】→【電子表格】→【查看模板】→發布不在目錄中的商品→<b>只選澳洲</b>、下載模板。務必填【Merchant Suggested ASIN】；FBA 賣家在【Fulfillment Channel Code】選【Amazon JP】（澳洲站有時歸在遠東區）。</td>
+          <td>商品尚未建立在系統記憶時使用。上傳約 5–10 分鐘，結果看【檢查上傳狀態】。</td>
+        </tr>
+      </tbody>
+    </table></div>
+    <p class="small">💡 價格可參考北美價 + GST 10% 或澳洲競品價；<b>SKU 一經填寫後續無法更改</b>，務必填正確。</p>
+
+    <h3>全新商品上架與 GTIN 豁免（免條碼）</h3>
+    <p>若有品牌但未曾在其他站點上架、也未申請過 UPC／EAN，可用 <b>GTIN 豁免</b>上架：後台【添加商品】→【空白表單】→填商品標題（系統自動推薦澳洲站分類節點）→填品牌名稱，並在【外部產品 ID】勾選【我沒有產品條碼】→按指示上傳含品牌 logo 的商品圖片。申請前備妥<b>品牌名稱、至少一項產品詳情、產品圖片</b>。</p>
+
+    <div class="note warn">
+      <b>⚠️ 跨站點圖片顯示錯誤？</b>常因圖片主控權不在自己帳戶的該站點。依序檢查：① 該站點是否已取得完整品牌權限（Brand representative + Admin）；② 主圖是否純白背景、≥1600×1600、無 logo／文字；③ 用<b>特定地區上傳</b>該站點圖片；④ 建議上傳滿 9 張圖 + SWCH 圖。仍無法顯示可請經理協助開內部申訴。
+    </div>
+
+    <details class="acc"><summary>🔗 批量上傳綁定父子變體（後台手動失效時的終極大招）</summary><div class="acc-body">
+      <p>當後台手動「Add a Variation」失效，用<b>批量上傳表格（Flat File）</b>可直接覆蓋系統邏輯錯誤。目錄 → 批量上傳商品 → 下載試算表（輸入產品類型）。在 Template 分頁：</p>
+      <p><b>父商品列：</b>Seller SKU 自訂（如 NAIL-STK-PARENT）；Product ID／Type 留空；Parentage 填 <span class="mono">Parent</span>；Parent SKU 留空；Relationship Type 留空；Variation Theme 填變體類型（如 ColorName）；Update Delete 填 <span class="mono">Update</span>。</p>
+      <p><b>子商品列：</b>Seller SKU 填現有子 SKU；Product ID 填子 ASIN、Type 填 ASIN；Parentage 填 <span class="mono">Child</span>；Parent SKU 填父 SKU；Relationship Type 填 <span class="mono">Variation</span>；Variation Theme 與父一致；Update Delete 填 <span class="mono">PartialUpdate</span>（只更新變體關係、不動原圖與描述）。變體欄位（如 Color Name）填正確值後上傳。</p>
+    </div></details>
+
+    <h3>關閉全球跟賣（避免 Amazon US 搶購物車）</h3>
+    <p>若澳洲前台看到自己的商品但賣家顯示為 Amazon US，可能是亞馬遜把你北美商品搬到澳洲站。到北美站後台（跟賣者為 Amazon Germany 則去德國站）右上角 Settings →「Fulfillment by Amazon」→ 找到「Allow Amazon to buy my products to sell globally」點【Edit】→ 啟用【Disable】；同時到「Export Setting」也設為 Disabled。</p>
+
+    <h3>Listing 常見錯誤代碼</h3>
+    <p>上架遇到錯誤代碼（如 8541、5461）可在《Listing 常見問題與開立客服全解析》查詢原因。</p>
+    <div class="links">
+      <a href="https://m.media-amazon.com/images/G/28/TWGS/SU/2024_Cross_Listing_Tool_Guidance.pdf" target="_blank" rel="noopener">🔗 跨站點搬遷 Listing 指南</a>
+      <a href="https://m.media-amazon.com/images/G/28/TWGS/Onboarding/Listing_guidance_1_by_1.pdf" target="_blank" rel="noopener">🔗 商品上架指南</a>
+      <a href="https://m.media-amazon.com/images/G/28/TWGS/SU/Listing_Error_Guidebook.pdf" target="_blank" rel="noopener">🔗 Listing 錯誤代碼查詢</a>
+    </div>
+  </div>
+</article>
+
+<!-- ==================== 07 ==================== -->
+<article class="chapter" id="sec07" data-stage="2" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">07</div>
+    <div class="ch-t">
+      <h2>物流與 FBA（棧板／庫容） 🚚</h2>
+      <div class="badges"><span class="badge">FBA 賣家</span><span class="badge au">木棧板・ISPM-15</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>發貨到澳洲 FC 的棧板<b>只收木製棧板</b>（首選澳洲標準 1165×1165mm），且海外木質包裝須符合 <b>ISPM-15</b> 檢疫處理，否則海關可能扣押銷毀。庫容用<b>容量監視器</b>查看與申請；2026 起為月度容量限制。</div>
+
+    <div class="checklist" data-cl="07">
+      <div class="ttl">✅ 本章行動清單</div>
+      <label><input type="checkbox"><span>已於後台開啟澳洲站 FBA 功能</span></label>
+      <label><input type="checkbox"><span>棧板為木製、四向叉車入口、符合尺寸與重量要求</span></label>
+      <label><input type="checkbox"><span>海外出口木棧板已完成 ISPM-15 熱處理／燻蒸並印有檢疫標章</span></label>
+      <label><input type="checkbox"><span>每棧板四面各貼 Amazon 棧板標籤，混合 SKU 已加貼標示</span></label>
+      <label><input type="checkbox"><span>已在容量監視器確認當月與未來三個月的預估容量</span></label>
+    </div>
+
+    <h3>⭐ 棧板要求（澳洲 FC）</h3>
+    <div class="tw"><table>
+      <thead><tr><th style="width:110px">面向</th><th>要求</th></tr></thead>
+      <tbody>
+        <tr><td><b>材質</b></td><td>只接受<b>木製棧板</b>，澳洲標準棧板（<b>1165mm × 1165mm</b>）為首選；紙板、粒子板、skid（無底板）、塑膠棧板一律拒收；損壞棧板不接受。必須有<b>四向叉車入口</b>且不可阻擋。</td></tr>
+        <tr><td><b>尺寸重量</b></td><td>也接受 ISO 標準尺寸（1000×1200、1016×1219mm 等）。最大總高度（含底座）<b>1.8m</b>（<b>MEL5 倉庫限 1.6m</b>）。建議最大重量 <b>1000kg</b>；底座上下板間距建議 ≥9cm 以便拖板車進入。</td></tr>
+        <tr><td><b>包裝固定</b></td><td>用收縮膜（shrink wrap）包覆固定，大型物品可用綁帶；建議透明塑膠膜。膜固定在棧板底部 30%–50% 位置錨定貨物，<b>不可遮擋叉車入口</b>，不允許鬆散或拖尾膜端。</td></tr>
+        <tr><td><b>標籤</b></td><td>每個棧板<b>四面各貼一張 Amazon 棧板標籤</b>；混合 SKU 須貼「MIXED ITEMS ON THIS PALLET」標示；標籤貼在透明膜外面保持完全可見。</td></tr>
+        <tr><td><b>木材處理<br>ISPM-15</b></td><td>海外（台灣、中國等）出口木製棧板到澳洲，木材必須符合 <b>ISPM-15 國際植物檢疫標準</b>，經<b>熱處理（HT）或燻蒸</b>並印有國際植物檢疫標章。澳洲海關要求嚴格，<b>不合規的木質包裝可能被扣押或銷毀</b>。</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small">資料來源：Amazon Australia Inbound Carrier Manual (PDF)。</p>
+
+    <h3>庫容管理</h3>
+    <p>查看路徑：後台 → 庫存 → 管理亞馬遜貨件 → 貨件處理進度頁面底部【容量監視器】。用選項卡選倉儲類型，左側圖表顯示目前容量使用與可建立新貨件的剩餘容量，右側表格顯示<b>未來三個月的預估容量限制</b>；將滑鼠移到「現有／待入庫／最大貨件」資訊標識上，可看對應商品件數。</p>
+    <div class="note warn">
+      <b>⭐ 申請額外庫容（兩種方式）：</b>
+      <ul>
+        <li><b>方法 1｜後台申請：</b>【容量監視器】→ 轉制容量管理器 → 建立新請求。</li>
+        <li><b>方法 2｜經理提報通道：</b>透過 <a href="https://forms.gle/Mc2v3RLAysgzAEAWA" target="_blank" rel="noopener">申請表單</a> 提報，結果由客戶經理 Jenny 個別通知，<b>建議至少提前一個月申請</b>。</li>
+      </ul>
+    </div>
+
+    <div class="links">
+      <a href="https://m.media-amazon.com/images/G/28/TWGS/Onboarding/FBA_STA_Guide_2024.pdf" target="_blank" rel="noopener">🔗 新手出貨指南（STA）</a>
+    </div>
+  </div>
+</article>
+
+<div class="stage-band" data-stage="3">
+  <span class="sb-t">🟡 階段三：成長期</span>
+  <span class="sb-d">08–11　VINE 評論、新品冷啟動、促銷檔期、企業購 B2B　—　<b>把流量、轉換與 B2B 藍海一起做起來</b></span>
+</div>
+
+<!-- ==================== 08 ==================== -->
+<article class="chapter" id="sec08" data-stage="3" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">08</div>
+    <div class="ch-t">
+      <h2>VINE 計畫與拿評論 ⭐</h2>
+      <div class="badges"><span class="badge">品牌型賣家</span><span class="badge au">澳洲站專屬・Pre-Release</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>VINE 於 2024 年上線澳洲站——賣家免費提供商品給 Amazon Vine 評論者試用換取真實評論。搭配 <b>Pre-Release 預先發佈</b>功能，新品建立 FBA 後即可報名，<b>上架首日就能自帶最多 30 條評論</b>，大幅提升新品轉化。</div>
+
+    <div class="checklist" data-cl="08">
+      <div class="ttl">✅ 本章行動清單</div>
+      <label><input type="checkbox"><span>已確認資格：專業帳戶＋完成品牌註冊的品牌所有者</span></label>
+      <label><input type="checkbox"><span>商品為 FBA 配送且有可用庫存、詳情頁評論 < 30 條</span></label>
+      <label><input type="checkbox"><span>新品已用 Pre-Release：設定未來的產品發佈日期（PSLD）並註冊 VINE</span></label>
+      <label><input type="checkbox"><span>已規劃於發佈日前至少 3 週完成註冊並確保庫存入倉</span></label>
+    </div>
+
+    <h3>開通方式與參與資格</h3>
+    <p>主帳號登入賣家平台 → 左側【廣告】→【Vine】→ 註冊符合要求的商品。參與資格：</p>
+    <ul>
+      <li>擁有專業銷售帳戶，且完成品牌註冊的<b>品牌所有者（Brand Owner）</b>或授權經銷商。</li>
+      <li>商品為 <b>FBA 配送</b>並有可用 FBA 庫存。</li>
+      <li>商品詳情頁評論 <b>&lt; 30 條</b>。</li>
+    </ul>
+    <p class="small">價目表依每個父 ASIN 註冊的商品數量分 3 檔；每個父 ASIN 可為 2 個 Units 免費註冊，可從「免費檔」「低價檔」向更高檔位升級。詳情與價格見後台 Help Page。</p>
+
+    <h3>⭐ Pre-Release 預先發佈功能</h3>
+    <p>新品建立 FBA 後、<b>無需等待入庫或正式上線</b>即可註冊 VINE。待商品抵達收貨中心後，即可提前觸達 Vine Voice 並收集評論；配合產品上線日期設定，<b>至多可在上線首日展示 30 條真實評論</b>。</p>
+    <div class="note ok"><b>✅ 操作重點：</b>先將產品發佈日期（PSLD）設在<b>未來日期</b>（入口：發佈新商品 → 產品詳情 → 產品網站發佈日期），再依標準 VINE 註冊步驟註冊。建議<b>發佈日前至少 3 週</b>完成註冊並確保庫存已入亞馬遜配送網路。</div>
+
+    <details class="acc"><summary>VINE Pre-Release 常見問答</summary><div class="acc-body">
+      <ul>
+        <li><b>每個父 ASIN 最多幾條評論？</b>最多 30 條，無論發佈前或後註冊都適用此上限。</li>
+        <li><b>會影響 90 天註冊週期嗎？</b>90 天週期從<b>庫存抵達且可購買時</b>起算，非從註冊預發佈時起算。VINE 採後收費：註冊後 90 天內收到 Vine Voice 評論才收費。</li>
+        <li><b>預發佈產品對一般顧客可見嗎？</b>不可見、無法訂購，只有 Vine Voices 能在正式發佈日前訂購與評論；評論在你設定的上線日前對所有人（含你）不可見。</li>
+        <li><b>活躍上限？</b>同一時間最多 <b>200 個活躍 ASIN</b> 註冊。</li>
+        <li><b>激勵政策資格？</b>Pre-Release 尚未入庫的 ASIN <b>不符合</b>新賣家大禮包補貼或 FBA 新選品激勵（需已入庫才有資格申領）。</li>
+      </ul>
+    </div></details>
+
+    <h3>其他拿評論方式</h3>
+    <p>非品牌／不走 VINE 時，可用「請求評論」：訂單 → 管理訂單 → 訂單詳情 → 請求評論。</p>
+    <div class="links">
+      <a href="https://sellercentral.amazon.com.au/help/hub/reference/external/G92T8UV339NZ98TN" target="_blank" rel="noopener">🔗 VINE 後台說明（價目與資格）</a>
+    </div>
+  </div>
+</article>
+
+<!-- ==================== 09 ==================== -->
+<article class="chapter" id="sec09" data-stage="3" data-who="new">
+  <div class="ch-head">
+    <div class="ch-num">09</div>
+    <div class="ch-t">
+      <h2>新品冷啟動與出單加速 🚀</h2>
+      <div class="badges"><span class="badge">新賣家</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>出第一單前，必須做對五件事：<b>Listing 基礎優化（轉換）→ 關鍵字佈局（曝光）→ 廣告 + 優惠券（流量）→ 拿評論（信任）→ Buy Box（成交）</b>。五步到位才會出單，一步沒做好，後面全白費。澳洲站別忘了用 <a href="#sec08">VINE Pre-Release</a> 讓新品上架首日就有評論。</div>
+
+    <div class="steps">
+      <div class="step"><div class="sn">STEP 1</div><div class="si">📝</div><div class="sh">Listing 優化</div><ul><li>標題五點</li><li>A+ 頁面</li><li>轉換基礎</li></ul></div>
+      <div class="step"><div class="sn">STEP 2</div><div class="si">🔑</div><div class="sh">關鍵字佈局</div><ul><li>核心 + 長尾</li><li>後台埋詞</li><li>曝光</li></ul></div>
+      <div class="step"><div class="sn">STEP 3</div><div class="si">📣</div><div class="sh">廣告 + 優惠券</div><ul><li>SP 自動</li><li>Coupon</li><li>導流量</li></ul></div>
+      <div class="step"><div class="sn">STEP 4</div><div class="si">⭐</div><div class="sh">拿評論</div><ul><li>VINE 計畫</li><li>請求評論</li><li>建立信任</li></ul></div>
+      <div class="step"><div class="sn">STEP 5</div><div class="si">🛒</div><div class="sh">Buy Box</div><ul><li>價格合規</li><li>庫存充足</li><li>成交</li></ul></div>
+    </div>
+
+    <div class="note ok"><b>✅ 專業提示：</b>進入冷啟動前，請確保 FBA 庫存已順利入庫，避免因斷貨導致黃金期權重流失。品牌型賣家務必先報 VINE Pre-Release，讓詳情頁在上線首日就有真實評論支撐轉化。</div>
+
+    <div class="links">
+      <a href="https://first-sale-checklist.netlify.app/" target="_blank" rel="noopener">🔗 出第一單前的完整檢查清單</a>
+    </div>
+  </div>
+</article>
+
+<!-- ==================== 10 ==================== -->
+<article class="chapter" id="sec10" data-stage="3" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">10</div>
+    <div class="ch-t">
+      <h2>促銷與澳洲全年檔期 🎯</h2>
+      <div class="badges"><span class="badge">所有賣家</span><span class="badge au">Deal 提報全部免費・三級分級</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>澳洲站 Deal <b>提報全部免費</b>，大促分<b>三級</b>（一級 &gt; 二級 &gt; 三級）。後台推薦的 ASIN 優先自助提報 Z 划算／秒殺；後台沒推薦的走<b>經理手工 Deal</b>通道。注意 <b>Best Deal 前後 14 天不可參加其他促銷</b>。</div>
+
+    <div class="note info">
+      <b>🛠 不確定自己能提報哪些 Deal？</b>用本頁的 <a href="#tool-deal">Deal 促銷資格檢查器</a>，輸入星級、折扣與配送方式，一鍵看出你符合哪些 Deal。
+    </div>
+
+    <!-- ========= TOOL: DEAL CHECKER ========= -->
+    <div class="tool" id="tool-deal">
+      <h3>🛠 Deal 促銷資格檢查器</h3>
+      <div class="lead">依澳洲站 Deal 規則試算你目前符合哪些促銷類型。方向性參考，實際以後台推薦與經理確認為準。</div>
+      <div class="q" data-dl="star">
+        <div class="qt">① 你的商品／店鋪星級？</div>
+        <div class="opts">
+          <button class="opt" data-v="0">0 星（無評論新品）</button>
+          <button class="opt" data-v="3">3 星～3.4 星</button>
+          <button class="opt" data-v="3.5">3.5 星～3.9 星</button>
+          <button class="opt" data-v="4">4 星以上</button>
+        </div>
+      </div>
+      <div class="q" data-dl="disc">
+        <div class="qt">② 你能提供的折扣幅度？（須 ≤ 過去 30 天最低價）</div>
+        <div class="opts">
+          <button class="opt" data-v="0">低於 5%</button>
+          <button class="opt" data-v="5">5%～9%</button>
+          <button class="opt" data-v="10">10%～14%</button>
+          <button class="opt" data-v="15">15%～19%</button>
+          <button class="opt" data-v="20">20% 以上</button>
+        </div>
+      </div>
+      <div class="q" data-dl="fulfil">
+        <div class="qt">③ 配送方式？</div>
+        <div class="opts">
+          <button class="opt" data-v="FBA">FBA（亞馬遜配送）</button>
+          <button class="opt" data-v="FBM">MFN／FBM（自行配送）</button>
+        </div>
+      </div>
+      <div class="result" id="dl-out"></div>
+    </div>
+
+    <h3>⭐ 澳洲站 2026 全年促銷月曆</h3>
+    <div class="tw"><table>
+      <thead><tr><th>月份</th><th>大促名稱</th><th>促銷時間（時長）</th><th class="ctr">級別</th><th>熱賣品類</th></tr></thead>
+      <tbody>
+        <tr><td>1–2 月</td><td>Back to School (BTS) 返校季</td><td>12/31 – 2/3（35 天）</td><td class="ctr">三級</td><td>活動主題相關品類</td></tr>
+        <tr><td>2 月</td><td>BAU1（非大促）</td><td>2/16 – 3/1（14 天）</td><td class="ctr">—</td><td>—</td></tr>
+        <tr><td>3 月</td><td>Big Smile Sale (BSS) 微笑大促</td><td>3/16 – 3/22（7 天）</td><td class="ctr">二級</td><td>所有品類</td></tr>
+        <tr><td>3–4 月</td><td>BAU2（非大促）</td><td>3/30 – 4/12（14 天）</td><td class="ctr">—</td><td>—</td></tr>
+        <tr><td>4–5 月</td><td>Mother's Day 母親節</td><td>4/20 – 5/10（21 天）</td><td class="ctr">三級</td><td>活動主題相關品類</td></tr>
+        <tr><td>5 月</td><td>BAU3（非大促）</td><td>5/11 – 5/24（14 天）</td><td class="ctr">—</td><td>—</td></tr>
+        <tr><td>6 月</td><td>Mid Year Sale (MYS) 年中大促</td><td>6/1 – 6/7（7 天）</td><td class="ctr">二級</td><td>所有品類</td></tr>
+        <tr><td>6 月</td><td>BAU4（非大促）</td><td>6/15 – 6/28（14 天）</td><td class="ctr">—</td><td>—</td></tr>
+        <tr><td>7 月</td><td>Prime Day (PD) 會員日</td><td>待定（機密）7 天</td><td class="tier1 ctr">一級</td><td>所有品類</td></tr>
+        <tr><td>8 月</td><td>BAU5（非大促）</td><td>8/3 – 8/16（14 天）</td><td class="ctr">—</td><td>—</td></tr>
+        <tr><td>8–9 月</td><td>Father's Day 父親節</td><td>8/18 – 9/7（21 天）</td><td class="ctr">三級</td><td>活動主題相關品類</td></tr>
+        <tr><td>9 月</td><td>BAU6（非大促）</td><td>9/14 – 9/27（14 天）</td><td class="ctr">—</td><td>—</td></tr>
+        <tr><td>10 月</td><td>Prime Big Deal Day (PBDD)</td><td>待定（機密）</td><td class="tier1 ctr">一級</td><td>所有品類</td></tr>
+        <tr><td>11 月</td><td>Black Friday & Cyber Monday</td><td>11/17 – 11/30（14 天）</td><td class="tier1 ctr">一級</td><td>所有品類</td></tr>
+        <tr><td>12 月</td><td>Boxing Day 節禮日</td><td>12/24 – 12/30（7 天）</td><td class="ctr">二級</td><td>所有品類</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note warn">
+      <b>📌 分級與提報規則重點：</b>
+      <ul>
+        <li><b>三級促銷：</b>後台<b>不會顯示</b>大促名稱，請直接對照上表時間提報 Z 划算或秒殺；顯示時長雖為 35／21 天，那是「整體曝光時段」，<b>單一 ASIN 提報上限 14 天</b>，自行選期間。</li>
+        <li><b>一級與二級促銷：</b>提報窗口開啟後後台會直接顯示活動名稱與時間；PD／PBDD 具體日期為機密，臨近才公布。</li>
+        <li><b>手工 Deal：</b>三級為曝光期內固定 14 天（以經理通知為準）；一級／二級的手工 Deal 日期與活動曝光、後台 Z 划算日期完全一致。</li>
+      </ul>
+    </div>
+
+    <h3>促銷類型一：需參考價（皆免費）</h3>
+    <div class="tw"><table>
+      <thead><tr><th>類型</th><th>特色</th><th>提報方式</th><th>要求</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Top Deal</b><br>（經理提報）14 天</td>
+          <td>流量最高、門檻最高</td>
+          <td><b>經理提報</b>（後台沒推薦的 ASIN）</td>
+          <td>星級 <b>0 星或 3 星+</b>；折扣 <b>≥15%</b>；≤30 天最低價；FBA（FBM 僅限超大超重、因電池無法入倉之產品）</td>
+        </tr>
+        <tr>
+          <td><b>Lightning Deal</b><br>（秒殺）12 小時</td>
+          <td>短時間高流量</td>
+          <td>後台推薦（廣告→秒殺）</td>
+          <td>星級 <b>3.5 星+</b>；折扣 <b>≥15%</b>；≤30 天最低價；FBA</td>
+        </tr>
+        <tr>
+          <td><b>7 Days / Best Deal</b><br>（Z 划算）7 天，可自訂最長 14 天</td>
+          <td>長時間穩定流量</td>
+          <td>後台推薦（廣告→秒殺）</td>
+          <td>星級 <b>3 星+</b>；折扣 <b>≥10%</b>；≤30 天最低價；FBA / FBM</td>
+        </tr>
+        <tr>
+          <td><b>Prime Exclusive Deal</b><br>（會員專享折扣）</td>
+          <td>會員專享</td>
+          <td>後台推薦（廣告→Prime 專享折扣）</td>
+          <td>星級無要求；折扣 <b>≥5%</b>；≤30 天最低價；FBA</td>
+        </tr>
+      </tbody>
+    </table></div>
+    <div class="note danger">
+      <b>⚠️ 同一 ASIN 三種 Deal 互斥：</b>不要同時段為已成功提報 Top Deal 的 ASIN 設定 Lightning／7 Days Deal，以免衝突導致活動失敗。提報優先級：<b>Top Deal &gt; Lightning Deal &gt; 7 Days Deal</b>。Coupon 與 Deal 可疊加，但要注意折上折。<b>Deal Rerun：Best Deal 執行前後 14 天內不得參與任何促銷（折扣／優惠券）。</b>
+    </div>
+
+    <h3>促銷類型二：無需參考價</h3>
+    <div class="tw"><table>
+      <thead><tr><th>類型</th><th>提報路徑</th><th>要求</th></tr></thead>
+      <tbody>
+        <tr><td><b>Coupon（優惠券）</b>最長 14 天</td><td>廣告→優惠券</td><td>星級無；折扣 ≥5%；≤30 天最低價。<b>新品 90 天後需參考價才能用 coupon，請讓新品在 90 天內有出單紀錄。</b>MFN 賣家也可提報 Coupon。</td></tr>
+        <tr><td><b>Price Discount（價格折扣）</b>最長 14 天</td><td>廣告→價格折扣</td><td>店鋪星級 3.5 星+</td></tr>
+        <tr><td><b>Percentage Off（分段促銷）</b></td><td>廣告→管理促銷</td><td>1 個商品也可提報</td></tr>
+        <tr><td><b>BXGY（買多少送多少）</b></td><td>廣告→管理促銷</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note info"><b>💡 避免折上折（Stacking）：</b>2024/10 起可在後台對 Coupon 與 BXGY 手動限制疊加——設定選【No, do not allow stacking】。同一 ASIN 同一時間建議只用一種促銷工具，避免超高折扣影響利潤；利潤充足想參加多種促銷時，<b>切勿疊加提報 Prime 專享折扣</b>，否則會觸發「禁止顯示」。</div>
+
+    <h3>後台 Deal 提報流程（Z 划算／秒殺）</h3>
+    <ol>
+      <li>賣家後台 →【廣告】→【秒殺】→【建立新促銷】。</li>
+      <li>【選擇】系統推薦符合要求的 ASIN（同一 ASIN 常同時被推薦 Z 划算與秒殺，<b>擇一提報、切勿重複</b>）。</li>
+      <li>自訂時段：Z 划算（BD）最長 14 天；秒殺（LD）於所選時段某天推出、持續 12 小時。一級／二級大促符合條件者會直接顯示固定時段。</li>
+      <li>配置促銷、輸入促銷價格或每件折扣（LD 另填最低促銷數量），選擇符合圖片政策的主商品圖，提交。</li>
+      <li>同一父 ASIN 下所有子 ASIN 可進同一 Deal；非同父的子 ASIN 若後台沒推薦，只能走手工 Deal。</li>
+    </ol>
+    <div class="note warn"><b>⚠️ 提報後持續關注狀態：</b>後台推薦每週更新，建議每週定期查看、能報盡報。活動開始前檢查是否有「需要注意」或「未定」提醒，及時依系統提示修復價格或庫存問題；提交促銷後<b>不要</b>向父商品分配未被推薦的新變體，否則可能被禁止顯示或取消。</div>
+
+    <h3>⭐ 手工 Deal 提報（經理通道）</h3>
+    <ol>
+      <li>確認商品有 <b>List Price</b>：【庫存】→【管理所有庫存】→【編輯商品信息】→【含稅價目表 List Price with Tax】填上建議價格。</li>
+      <li>填妥對應活動的 Deal 提報 Excel（Deal 價格為<b>折扣後價格</b>，須至少為參考價 85 折、且 ≤30 天最低價；SKU 與後台一致）。</li>
+      <li>透過經理提供的手工 Deal 問卷連結提交，並寄 Excel 至 <a href="mailto:chiawenk@amazon.com">chiawenk@amazon.com</a>，提醒業務拓展經理 Jenny。</li>
+    </ol>
+    <p class="small">💡 經理提報 Deal 與後台 Z 划算在前台<b>展示曝光完全相同</b>（皆為 Best Deal），差別只在「後台是否有推薦」。若後台已可提報，請優先自助提報。</p>
+
+    <h3>參考價（VRP／Validated Reference Price）</h3>
+    <p>參考價有兩種：<b>市場價（List Price）</b>——賣家提供、需通過亞馬遜自動驗證；<b>原價格（Was Price）</b>——亞馬遜自動計算（90 天內不含促銷的歷史價格）。市場價由賣家至後台提交（單個或批量），你有責任確保提供的市場價為最新。</p>
+
+    <details class="more"><summary>🏷️ 奧特萊斯限時促銷（Outlet Deals）</summary><div class="acc-body">
+      <p>針對特定商品曝光引流的限時促銷，持續兩週，幫助清庫存、優化庫存水平、降低倉儲費。<b>流量大、限時促、可與其他折扣疊加</b>（含優惠券、特價、企業商品價格、贈品）。後台自動推薦，符合條件的 ASIN 會收到邀請。</p>
+      <p>路徑：後台 → 菜單 → 庫存 → 亞馬遜物流庫存 → 篩選條件「創建奧特萊斯限時促銷」。前台入口：amazon.com.au → Today's Deal → Outlet。</p>
+    </div></details>
+  </div>
+</article>
+
+<!-- ==================== 11 ==================== -->
+<article class="chapter" id="sec11" data-stage="3" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">11</div>
+    <div class="ch-t">
+      <h2>亞馬遜企業購 B2B 🏢</h2>
+      <div class="badges"><span class="badge">所有賣家</span><span class="badge au">澳洲站藍海・開通免費</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>企業購（Amazon Business）是觸達企業買家的 B2B 流量入口，<b>開通無額外費用、不需新增 listing、不需分倉</b>。加入只需提供 <b>ABN 或 SSF</b>。澳洲 B2B 市場 2025 年估達 3,750 億澳元，頭部賣家 90% 以上都已開通。</div>
+
+    <div class="note info">
+      <b>🛠 不確定該用 ABN 還是 SSF、要不要開 GST 發票？</b>用本頁的 <a href="#tool-b2b">企業購 B2B 啟用助手</a>，回答兩個問題就生成你的開通與發票待辦。
+    </div>
+
+    <!-- ========= TOOL: B2B ASSISTANT ========= -->
+    <div class="tool" id="tool-b2b">
+      <h3>🛠 企業購 B2B 啟用助手</h3>
+      <div class="lead">回答下列問題，生成你的企業購開通方式與發票義務清單。方向性指引，稅務事項請與稅代確認。</div>
+      <div class="q">
+        <div class="qt">① 你是否有澳洲商業號碼（ABN）？</div>
+        <div class="cbs" id="b2b-abn">
+          <label><input type="radio" name="b2babn" value="yes">有 ABN</label>
+          <label><input type="radio" name="b2babn" value="no" checked>沒有 ABN</label>
+        </div>
+      </div>
+      <div class="q">
+        <div class="qt">② 你是否已註冊澳洲 GST？</div>
+        <div class="cbs" id="b2b-gst">
+          <label><input type="radio" name="b2bgst" value="yes">已註冊 GST</label>
+          <label><input type="radio" name="b2bgst" value="no" checked>尚未註冊 GST</label>
+        </div>
+      </div>
+      <div class="q">
+        <div class="qt">③ 想設定企業專屬折扣價（B2B 定價）嗎？</div>
+        <div class="cbs" id="b2b-price">
+          <label><input type="radio" name="b2bprice" value="yes" checked>想，要看設定方式</label>
+          <label><input type="radio" name="b2bprice" value="no">暫時不用</label>
+        </div>
+      </div>
+      <div class="result" id="b2b-out"></div>
+    </div>
+
+    <h3>什麼是企業購？為什麼要做？</h3>
+    <p>亞馬遜企業購是針對企業買家的線上採購業務——新型一站式跨境 B2B 模式，幫海外賣家直接觸達終端企業買家。全球 B2B 電商市場約為 B2C 的 3 倍；2026 年以來澳洲站已有多個重量級企業客戶持續採購，包括連鎖餐飲、連鎖超市巨頭、醫療研究機構與私立醫院、大型動物園、全球郵輪公司澳洲分部等，採購電子設備、電腦配件、辦公用品、倉儲物流用品等。</p>
+
+    <h3>如何加入：ABN 或 SSF</h3>
+    <p>要加入澳洲企業購並接觸企業級客戶，必須向亞馬遜提供<b>澳洲商業號碼（ABN）</b>或<b>供應商聲明表（SSF）</b>。因為在澳洲，賣家若不提供 ABN，企業消費者就得支付額外稅費；賣家沒有 ABN 時可提供 SSF 作為替代，讓客戶無需支付額外稅費。</p>
+    <ul>
+      <li><b>SSF</b> 是一份簡單的一頁文件，說明你未提供 ABN 的原因。</li>
+      <li>SSF 可於後台下載：後台 → 右上角設定 →【稅務設定】→【新增澳洲商務號／增值稅／商品和服務稅登記號】→ 點【沒有 ABN】→【Download SSF template】。</li>
+      <li>填妥後上傳至後台即完成。上傳 ABN／SSF 後亞馬遜會做基本檢查並以 email 通知批准或拒絕（<b>提交 SSF 不會觸發二次審核</b>）。</li>
+    </ul>
+
+    <details class="acc"><summary>SSF 常見疑問（FAQ）</summary><div class="acc-body">
+      <ul>
+        <li><b>除了上傳 ABN／SSF 還要做什麼？</b>不需要。無需建立新 listing 或分割庫存，即可開始向企業客戶銷售；可自主選用批量定價等額外功能。</li>
+        <li><b>亞馬遜如何使用我的 SSF？</b>① 審核通過後可參加企業購；② 企業客戶要求時提供副本。不會與其他第三方分享。</li>
+        <li><b>必須法人簽名嗎？</b>不必，填表人簽名即可。</li>
+        <li><b>地址欄填不下？</b>可省略【市】【區】只寫地址細節；仍填不下就選地址後面部分填寫。</li>
+      </ul>
+    </div></details>
+
+    <h3>如何設定企業購價格（B2B 定價）</h3>
+    <p>企業商品價格是給企業購買家的折扣價，不受購買數量限制。設定後前台會有<b>藍色標示</b>說明 B2B 企業購價格。路徑：後台 →【庫存】→【管理所有庫存】→【設定企業價格】。</p>
+    <ol>
+      <li>【管理所有庫存】→ 右上角【首選項】→ 勾選【企業商品價格】。</li>
+      <li>回到【管理所有庫存】→【企業商品價格】設定：企業價需<b>比 2C 消費者端低</b>，強烈建議<b>閾值數量設 2、4、6</b>（數量折扣）。</li>
+    </ol>
+    <details class="acc"><summary>企業折扣自動定價與疊加規則</summary><div class="acc-body">
+      <ul>
+        <li><b>為何要設最低價？</b>最低保護價是任何情況（含優惠券、直降）都不能低於的安全底線，防止手滑錯設。建議設「最低價格百分比」至少 80% off，低於此會觸發保護、直接下架 listing。</li>
+        <li><b>折扣行怎麼填？</b>第一行是單件企業折扣；第二行起為數量折扣（至少 2 件起，每檔數量／折扣須比前一檔更多，最多 5 檔）。折扣基於 <b>ASIN 標準價格</b>計算，不隨 deal price 變動。</li>
+        <li><b>Deal 與 BP（企業價）：</b>不可疊加，取兩者較低價。</li>
+        <li><b>Deal 與 QD（數量折扣）：</b>購買達 QD 門檻時取兩者較低價。</li>
+        <li><b>Coupon 與 BP／QD：</b>可疊加；優惠券設「每位買家只兌換一次」則只疊加第一件，設「否」則最多疊加 5 件。</li>
+        <li><b>Promotion（%off）與 QD：</b>購買達門檻時可疊加。</li>
+      </ul>
+    </div></details>
+
+    <div class="note warn"><b>🧾 B2B 發票：</b>若已註冊 GST，須為企業購訂單提供<b>含 ABN 的稅務發票</b>；未註冊 GST 則無需（可上傳商業發票／收據）。不上傳發票不影響訂單履行與帳戶健康。詳見 <a href="#sec04">第 04 章</a>。</div>
+
+    <div class="links">
+      <a href="https://gs.amazon.cn/amazon-business" target="_blank" rel="noopener">🔗 企業購官方介紹</a>
+      <a href="https://www.ato.gov.au/" target="_blank" rel="noopener">🔗 澳洲稅務局 ATO（ABN／GST）</a>
+    </div>
+  </div>
+</article>
+
+<div class="stage-band" data-stage="4">
+  <span class="sb-t">⚪ 階段四：資源與支援</span>
+  <span class="sb-d">12–13　常見問題、服務商與官方連結　—　<b>遇到卡關時先看這裡</b></span>
+</div>
+
+<!-- ==================== 12 ==================== -->
+<article class="chapter" id="sec12" data-stage="4" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">12</div>
+    <div class="ch-t">
+      <h2>常見問題 ❓</h2>
+      <div class="badges"><span class="badge">所有賣家</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>把澳洲站最常被問到的問題集中在此。找不到答案時，別忘了本頁上方的<b>搜尋框</b>可全站關鍵字檢索。</div>
+
+    <div class="faq">
+      <details class="acc"><summary>澳洲站的 GST 是多少？售價要含稅嗎？</summary><div class="acc-body"><p>澳洲 GST 統一為 <b>10%</b>，前台價格須<b>含稅</b>。是否需要註冊 GST 及門檻請以 ATO 規定與稅代建議為準。詳見 <a href="#sec04">第 04 章</a>。</p></div></details>
+      <details class="acc"><summary>澳洲站可以用 VINE 計畫嗎？新品沒評論怎麼辦？</summary><div class="acc-body"><p><b>可以。</b>VINE 於 2024 年上線澳洲站，並支援 Pre-Release：新品建立 FBA 後即可報名，上架首日就能自帶最多 30 條評論。詳見 <a href="#sec08">第 08 章</a>。</p></div></details>
+      <details class="acc"><summary>企業購（B2B）要收費嗎？一定要 ABN 嗎？</summary><div class="acc-body"><p>開通<b>無額外費用</b>，不需新增 listing 或分倉。加入需提供 <b>ABN 或 SSF</b>——沒有 ABN 可用 SSF 替代，讓企業客戶免付額外稅費。詳見 <a href="#sec11">第 11 章</a>或用 <a href="#tool-b2b">B2B 啟用助手</a>。</p></div></details>
+      <details class="acc"><summary>發貨到澳洲的棧板有什麼特別要求？</summary><div class="acc-body"><p>只收<b>木製棧板</b>（首選 1165×1165mm），海外木棧板須符合 <b>ISPM-15</b> 熱處理／燻蒸並印檢疫標章，否則海關可能扣押銷毀。四面各貼 Amazon 棧板標籤。詳見 <a href="#sec07">第 07 章</a>。</p></div></details>
+      <details class="acc"><summary>我在美國站的商品怎麼搬到澳洲？</summary><div class="acc-body"><p>先<b>開啟澳洲站 FBA</b>、品牌型賣家先完成品牌授權，再用跨站搬遷（建議方法 2：澳洲站輸入 ASIN）。批量上傳時 FBA 賣家在 Fulfillment Channel Code 選 <b>Amazon JP</b>（澳洲站歸遠東區）。詳見 <a href="#sec06">第 06 章</a>。</p></div></details>
+      <details class="acc"><summary>大促的三級分級是什麼意思？</summary><div class="acc-body"><p>重要程度：<b>一級 &gt; 二級 &gt; 三級</b>。一級如 Prime Day、PBDD、Black Friday；二級如微笑大促、年中大促、Boxing Day；三級如返校季、母親節、父親節。三級後台不顯示活動名稱、需自行對照時間提報。詳見 <a href="#sec10">第 10 章</a>。</p></div></details>
+      <details class="acc"><summary>Deal 提報要收費嗎？Best Deal 有什麼冷卻限制？</summary><div class="acc-body"><p>澳洲站 Deal <b>提報全部免費</b>。注意 <b>Best Deal 執行前後 14 天內不得參與任何促銷</b>（折扣／優惠券）。可用 <a href="#tool-deal">Deal 資格檢查器</a>試算。</p></div></details>
+      <details class="acc"><summary>收不到登入／收款的 OTP 簡訊怎麼辦？</summary><div class="acc-body"><p>可用 Google Authenticator App 綁定帳號改用 App 收碼；收款驗證收不到簡訊時，可透過關閉兩步驗證流程讓系統改寄 email。詳見 <a href="#sec04">第 04 章</a>。</p></div></details>
+    </div>
+  </div>
+</article>
+
+<!-- ==================== 13 ==================== -->
+<article class="chapter" id="sec13" data-stage="4" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">13</div>
+    <div class="ch-t">
+      <h2>服務商、學習資源與官方連結 📚</h2>
+      <div class="badges"><span class="badge">所有賣家</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>把澳洲站最常用的官方文件、服務商清單與工具集中於此，方便隨時取用。</div>
+
+    <h3>服務商清單</h3>
+    <div class="links">
+      <a href="https://amazontw.pse.is/9abp77" target="_blank" rel="noopener">📍 服務商名單（台灣）</a>
+      <a href="https://spn.globalsellingcommunity.cn/homePage" target="_blank" rel="noopener">📍 服務商名單（中國大陸）</a>
+    </div>
+    <p class="small">⚠️ 服務商清單僅為資訊資源；若與任一服務商合作，你將直接與其簽約，亞馬遜不承擔其服務責任。</p>
+
+    <h3>官方學習資源與文件</h3>
+    <div class="links">
+      <a href="https://m.media-amazon.com/images/G/28/TWGS/SU/TW_GS_Registration_Guidebook_DSR_Grex.pdf" target="_blank" rel="noopener">📝 註冊手冊</a>
+      <a href="https://m.media-amazon.com/images/G/28/TWGS/SU/MENA_Tax_Interview.pdf" target="_blank" rel="noopener">🧾 美國稅務調查填寫指南</a>
+      <a href="https://m.media-amazon.com/images/G/28/TWGS/SU/2024_Cross_Listing_Tool_Guidance.pdf" target="_blank" rel="noopener">🌍 跨站點搬遷 Listing 指南</a>
+      <a href="https://m.media-amazon.com/images/G/28/TWGS/SU/Listing_Error_Guidebook.pdf" target="_blank" rel="noopener">🔧 Listing 錯誤代碼查詢</a>
+      <a href="https://m.media-amazon.com/images/G/28/TWGS/Onboarding/FBA_STA_Guide_2024.pdf" target="_blank" rel="noopener">📦 新手出貨指南（STA）</a>
+      <a href="https://first-sale-checklist.netlify.app/" target="_blank" rel="noopener">🚀 出第一單前檢查清單</a>
+    </div>
+
+    <h3>企業購與稅務資源</h3>
+    <div class="links">
+      <a href="https://gs.amazon.cn/amazon-business" target="_blank" rel="noopener">🏢 企業購官方介紹</a>
+      <a href="https://www.ato.gov.au/" target="_blank" rel="noopener">🧾 澳洲稅務局 ATO（ABN／GST）</a>
+      <a href="https://sellercentral.amazon.com.au/help/hub/reference/external/G92T8UV339NZ98TN" target="_blank" rel="noopener">⭐ VINE 後台說明</a>
+    </div>
+
+    <h3>常用小工具</h3>
+    <div class="links">
+      <a href="https://sellercentral.amazon.com.au/hz/fba/profitabilitycalculator/index?lang=zh-TW" target="_blank" rel="noopener">💰 成本計算機</a>
+      <a href="https://forms.gle/Mc2v3RLAysgzAEAWA" target="_blank" rel="noopener">📦 額外庫容申請表單</a>
+      <a href="https://downdetector.com/status/amazon/" target="_blank" rel="noopener">🛰️ Amazon 是否發生災難（Downdetector）</a>
+    </div>
+
+    <div class="note info"><b>📞 需要協助？</b>Deal／庫容提報與各項諮詢，請寄 <a href="mailto:chiawenk@amazon.com">chiawenk@amazon.com</a> 並提醒你的澳洲站業務拓展經理 <b>Jenny</b>。後台自助註冊者記得提醒經理，以取得年底前免費輔導服務。</div>
+  </div>
+</article>
+
+<div class="nores" id="nores">🔍 找不到符合條件的章節，請調整搜尋關鍵字或篩選條件。</div>
+
+</div><!-- /wrap -->
+
+<footer><div class="wrap">
+  <div class="fw">
+    <div>
+      <div style="color:#fff; font-weight:700; font-size:15px; margin-bottom:6px">📞 需要協助？</div>
+      <div>亞馬遜全球開店 澳洲站　業務拓展經理　<b style="color:#fff">Jenny</b></div>
+      <div style="margin-top:4px">✉️ <a href="mailto:chiawenk@amazon.com">chiawenk@amazon.com</a></div>
+    </div>
+    <div style="font-size:12.5px">
+      <div style="color:#fff; font-weight:700; margin-bottom:6px">我可以協助的事</div>
+      註冊備件與 KYC 視訊判讀　·　GST／稅代媒合<br>
+      品牌授權與跨站搬遷　·　FBA 開通、棧板與庫容申請<br>
+      VINE 與企業購開通　·　Deal 促銷與大促檔期提報
+    </div>
+  </div>
+  <div class="fd">
+    本手冊為客戶經理額外整理之輔導參考資料，<b>不代表亞馬遜官方立場，亦不構成法律、稅務或合規意見</b>。
+    所有費率、優惠條件、大促日期、法規生效日與操作路徑均可能變動，請以
+    <a href="https://sellercentral.amazon.com.au/" target="_blank" rel="noopener">賣家後台</a>、
+    <a href="https://gs.amazon.com.tw/" target="_blank" rel="noopener">官方公告</a>
+    及澳洲主管機關（澳洲稅務局 ATO 等）最新公告為準。稅務與合規事項請與您的稅代／合規顧問確認後執行。
+  </div>
+</div></footer>
+
+<button class="totop" id="totop" title="回到頂端">↑</button>
+
+<script>
+(function(){
+  "use strict";
+  var STORE = "amzn-au-guide-v1";
+
+  /* ---------- progress (localStorage) ---------- */
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.checklist input[type=checkbox]'));
+  boxes.forEach(function(b,i){ b.dataset.key = (b.closest('.checklist').dataset.cl||'x') + '-' + i; });
+
+  function load(){ try{ return JSON.parse(localStorage.getItem(STORE)) || {}; }catch(e){ return {}; } }
+  function save(state){ try{ localStorage.setItem(STORE, JSON.stringify(state)); }catch(e){} }
+  var state = load();
+  boxes.forEach(function(b){ if(state[b.dataset.key]) b.checked = true; });
+
+  var ptext = document.getElementById('ptext'), pbar = document.getElementById('pbar');
+  function paint(){
+    var done = boxes.filter(function(b){ return b.checked; }).length;
+    ptext.textContent = done + ' / ' + boxes.length;
+    pbar.style.width = (boxes.length ? (done/boxes.length*100) : 0) + '%';
+  }
+  boxes.forEach(function(b){
+    b.addEventListener('change', function(){
+      state[b.dataset.key] = b.checked;
+      if(!b.checked) delete state[b.dataset.key];
+      save(state); paint();
+    });
+  });
+  document.getElementById('preset').addEventListener('click', function(){
+    if(!confirm('確定清除所有勾選進度？')) return;
+    boxes.forEach(function(b){ b.checked = false; });
+    state = {}; save(state); paint();
+  });
+  paint();
+
+  /* ---------- filters + search ---------- */
+  var chapters = Array.prototype.slice.call(document.querySelectorAll('.chapter'));
+  var whoSel = 'all', stageSel = 'all', term = '';
+  var nores = document.getElementById('nores');
+
+  function clearMarks(root){
+    root.querySelectorAll('mark').forEach(function(m){
+      var t = document.createTextNode(m.textContent);
+      m.parentNode.replaceChild(t, m);
+    });
+    root.normalize();
+  }
+  function markTerm(root, t){
+    if(!t) return;
+    var low = t.toLowerCase();
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if(!n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        var p = n.parentNode.nodeName;
+        if(p==='SCRIPT'||p==='STYLE'||p==='MARK') return NodeFilter.FILTER_REJECT;
+        return n.nodeValue.toLowerCase().indexOf(low) > -1 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    var hits = [], n;
+    while((n = walker.nextNode())) hits.push(n);
+    hits.forEach(function(node){
+      var idx = node.nodeValue.toLowerCase().indexOf(low);
+      if(idx < 0) return;
+      var after = node.splitText(idx);
+      after.splitText(t.length);
+      var mk = document.createElement('mark');
+      mk.appendChild(document.createTextNode(after.nodeValue));
+      after.parentNode.replaceChild(mk, after);
+    });
+  }
+
+  var bands = Array.prototype.slice.call(document.querySelectorAll('.stage-band'));
+
+  function apply(){
+    var shown = 0;
+    chapters.forEach(function(ch){
+      clearMarks(ch);
+      var okWho = (whoSel === 'all') || (ch.dataset.who === 'all') || (ch.dataset.who === whoSel);
+      var okStage = (stageSel === 'all') || (ch.dataset.stage === stageSel);
+      var okTerm = true;
+      if(term){ okTerm = ch.textContent.toLowerCase().indexOf(term.toLowerCase()) > -1; }
+      var vis = okWho && okStage && okTerm;
+      ch.classList.toggle('hide', !vis);
+      if(vis){
+        shown++;
+        if(term){
+          markTerm(ch, term);
+          ch.querySelectorAll('details.acc').forEach(function(d){
+            if(d.textContent.toLowerCase().indexOf(term.toLowerCase()) > -1) d.open = true;
+          });
+        }
+      }
+    });
+    bands.forEach(function(b){
+      var any = chapters.some(function(ch){
+        return ch.dataset.stage === b.dataset.stage && !ch.classList.contains('hide');
+      });
+      b.classList.toggle('hide', !any);
+    });
+    nores.classList.toggle('show', shown === 0);
+  }
+
+  document.querySelectorAll('[data-who]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('[data-who]').forEach(function(b){ b.classList.remove('on'); });
+      btn.classList.add('on'); whoSel = btn.dataset.who; apply();
+    });
+  });
+  document.querySelectorAll('.chip[data-stage]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.chip[data-stage]').forEach(function(b){ b.classList.remove('on'); });
+      btn.classList.add('on'); stageSel = btn.dataset.stage; apply();
+    });
+  });
+  var qi = document.getElementById('q'), tmr;
+  qi.addEventListener('input', function(){
+    clearTimeout(tmr);
+    tmr = setTimeout(function(){ term = qi.value.trim(); apply(); }, 200);
+  });
+
+  /* ---------- tool: Deal eligibility checker (AU) ---------- */
+  var dl = { star:null, disc:null, fulfil:null };
+  document.querySelectorAll('[data-dl]').forEach(function(grp){
+    grp.querySelectorAll('.opt').forEach(function(o){
+      o.addEventListener('click', function(){
+        grp.querySelectorAll('.opt').forEach(function(x){ x.classList.remove('on'); });
+        o.classList.add('on');
+        dl[grp.dataset.dl] = o.dataset.v;
+        dlRender();
+      });
+    });
+  });
+  function dlRender(){
+    var out = document.getElementById('dl-out');
+    if(dl.star===null || dl.disc===null || dl.fulfil===null){ out.classList.remove('show'); return; }
+    var star = parseFloat(dl.star), disc = parseFloat(dl.disc), fba = (dl.fulfil==='FBA');
+    var deals = [
+      { name:'Top Deal（經理提報，14 天）',        ch:'經理提報（寄 chiawenk@amazon.com）',   ok:(star===0 || star>=3) && disc>=15 && fba,
+        req:'星級 0 星或 3 星+、折扣 ≥15%、FBA（FBM 僅限超大超重電池品）' },
+      { name:'Lightning Deal（秒殺，12 小時）',     ch:'後台推薦（廣告→秒殺）',                 ok:star>=3.5 && disc>=15 && fba,
+        req:'星級 ≥3.5 星、折扣 ≥15%、FBA' },
+      { name:'7 Days / Best Deal（Z 划算，最長 14 天）', ch:'後台推薦（廣告→秒殺）',           ok:star>=3 && disc>=10,
+        req:'星級 ≥3 星、折扣 ≥10%、FBA/FBM 皆可' },
+      { name:'Prime Exclusive Deal（會員專享）',    ch:'後台推薦（廣告→Prime 專享折扣）',       ok:disc>=5 && fba,
+        req:'星級無要求、折扣 ≥5%、FBA' },
+      { name:'Coupon（優惠券）',                    ch:'後台自主（廣告→優惠券）',               ok:disc>=5,
+        req:'星級無要求、折扣 ≥5%、FBA/FBM/MFN 皆可' }
+    ];
+    var yes = deals.filter(function(d){ return d.ok; });
+    var no  = deals.filter(function(d){ return !d.ok; });
+
+    var html = '<div class="pill">' + (yes.length ? '你目前符合 ' + yes.length + ' 種 Deal' : '目前尚未符合任何 Deal') + '</div>';
+    if(yes.length){
+      html += '<h4>✅ 可提報</h4><ul>';
+      yes.forEach(function(d){ html += '<li><b>' + d.name + '</b> — ' + d.ch + '</li>'; });
+      html += '</ul>';
+    }
+    if(no.length){
+      html += '<h4 style="color:var(--ink-2)">⛔ 尚不符合（差在哪）</h4><ul>';
+      no.forEach(function(d){
+        var miss = [];
+        if(d.name.indexOf('Top Deal')===0 && !(star===0||star>=3)) miss.push('星級需 0 星或 3 星+');
+        if(d.name.indexOf('Lightning')===0 && star<3.5) miss.push('星級需 ≥3.5');
+        if(d.name.indexOf('7 Days')===0 && star<3) miss.push('星級需 ≥3');
+        if((d.name.indexOf('Top Deal')===0) && disc<15) miss.push('折扣需 ≥15%');
+        if((d.name.indexOf('Lightning')===0) && disc<15) miss.push('折扣需 ≥15%');
+        if((d.name.indexOf('7 Days')===0) && disc<10) miss.push('折扣需 ≥10%');
+        if((d.name.indexOf('Prime')===0 || d.name.indexOf('Coupon')===0) && disc<5) miss.push('折扣需 ≥5%');
+        if((d.name.indexOf('Top Deal')===0 || d.name.indexOf('Lightning')===0 || d.name.indexOf('Prime')===0) && !fba) miss.push('需 FBA');
+        html += '<li><b>' + d.name + '</b>　<span class="small">要求：' + d.req + (miss.length ? '　→ 尚差：' + miss.join('、') : '') + '</span></li>';
+      });
+      html += '</ul>';
+    }
+    html += '<div class="note danger" style="margin:10px 0 0"><b>⚠️ 共同前提：</b>所有 Deal 促銷價須 <b>≤ 過去 30 天最低價</b>；同一 ASIN 的 Top / Lightning / 7 Days 三種 Deal <b>互斥</b>。<b>Best Deal 執行前後 14 天內不得參與任何促銷（折扣／優惠券）</b>。新品用 Coupon：90 天後需參考價，請讓新品在 90 天內有出單紀錄。</div>';
+    html += '<div class="small" style="margin-top:8px">※ 方向性試算，實際以後台推薦清單與客戶經理確認為準。</div>';
+    out.innerHTML = html;
+    out.classList.add('show');
+  }
+
+  /* ---------- tool: B2B / 企業購 assistant ---------- */
+  function b2bRender(){
+    var abn = (document.querySelector('#b2b-abn input:checked')||{}).value || 'no';
+    var gst = (document.querySelector('#b2b-gst input:checked')||{}).value || 'no';
+    var price = (document.querySelector('#b2b-price input:checked')||{}).value || 'yes';
+    var out = document.getElementById('b2b-out');
+
+    var html = '<div class="pill">你的企業購開通清單</div>';
+
+    /* 開通方式 */
+    html += '<h4>① 加入企業購（開通免費）</h4>';
+    if(abn === 'yes'){
+      html += '<ul><li>你有 <b>ABN</b>：直接於後台 → 設定 →【稅務設定】上傳 ABN 即可加入企業購。企業客戶無需支付額外稅費。</li></ul>';
+    } else {
+      html += '<ul><li>你沒有 ABN：改提供 <b>SSF（供應商聲明表）</b>作為替代，讓企業客戶免付額外稅費。</li>'
+           +  '<li>下載路徑：後台 → 右上角設定 →【稅務設定】→【新增澳洲商務號／增值稅／商品和服務稅登記號】→ 點【沒有 ABN】→【Download SSF template】。</li>'
+           +  '<li>填妥後上傳後台；亞馬遜做基本檢查後以 email 通知批准或拒絕（<b>不會觸發二次審核</b>）。填表人簽名即可，不必法人簽名。</li></ul>';
+    }
+    html += '<div class="small">共同點：加入後<b>無需新增 listing、無需分割庫存</b>，即可向企業客戶銷售；可自主選用批量定價等功能。</div>';
+
+    /* 發票 */
+    html += '<h4>② 發票義務</h4>';
+    if(gst === 'yes'){
+      html += '<div class="note warn" style="margin:8px 0"><b>你已註冊 GST：</b>須為<b>企業購（B2B）訂單</b>提供<b>含 ABN 的稅務發票</b>。B2C 一般消費者索取發票時，於 <b>28 天內</b>處理即可。售價一律含 GST 10%。</div>';
+    } else {
+      html += '<div class="note info" style="margin:8px 0"><b>你尚未註冊 GST：</b><b>無需</b>提供含 ABN 的稅務發票（可上傳商業發票／收據）。B2C 消費者索票時建議 28 天內處理；不上傳發票不影響訂單履行與帳戶健康。是否需要註冊 GST 請與稅代確認。</div>';
+    }
+
+    /* B2B pricing */
+    if(price === 'yes'){
+      html += '<h4>③ 設定企業購價格（拿藍色 B2B 標示）</h4>';
+      html += '<ul>'
+           +  '<li>路徑：後台 →【庫存】→【管理所有庫存】→ 右上角【首選項】勾選【企業商品價格】→ 回列表設定【企業商品價格】。</li>'
+           +  '<li>企業價需<b>比 2C 消費者端低</b>；數量折扣<b>閾值建議設 2、4、6</b>。</li>'
+           +  '<li>用自動定價時務必設<b>最低保護價（建議 ≥80% off 底線）</b>，防止錯設價格；折扣基於 ASIN 標準價計算，不隨 deal price 變動。</li>'
+           +  '</ul>';
+    }
+
+    html += '<div class="small" style="margin-top:10px">※ 方向性指引，非完整法規清單，亦不構成法律／稅務意見。ABN／GST 事項請與稅代或 ATO 確認，並以後台當前要求為準。</div>';
+    out.innerHTML = html;
+    out.classList.add('show');
+  }
+  document.querySelectorAll('#b2b-abn input, #b2b-gst input, #b2b-price input').forEach(function(i){
+    i.addEventListener('change', b2bRender);
+  });
+  b2bRender();
+
+  /* ---------- side nav: scrollspy + mobile toggle ---------- */
+  var sidenav = document.getElementById('sidenav');
+  var snLinks = Array.prototype.slice.call(sidenav.querySelectorAll('a'));
+  var snMap = {};
+  snLinks.forEach(function(a){ snMap[a.getAttribute('href').slice(1)] = a; });
+
+  if('IntersectionObserver' in window){
+    var visible = {};
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting) visible[e.target.id] = e.intersectionRatio;
+        else delete visible[e.target.id];
+      });
+      var best = null;
+      chapters.forEach(function(ch){
+        if(ch.classList.contains('hide')) return;
+        if(visible[ch.id] != null){ if(!best) best = ch.id; }
+      });
+      if(best){
+        snLinks.forEach(function(a){ a.classList.remove('active'); });
+        if(snMap[best]) snMap[best].classList.add('active');
+      }
+    }, { rootMargin:'-140px 0px -55% 0px', threshold:[0,1] });
+    chapters.forEach(function(ch){ io.observe(ch); });
+  }
+
+  var backdrop = document.getElementById('snBackdrop');
+  var navToggle = document.getElementById('navToggle');
+  function openNav(){ sidenav.style.transform='translateX(0)'; backdrop.classList.add('show'); }
+  function closeNav(){ sidenav.style.transform=''; backdrop.classList.remove('show'); }
+  navToggle.addEventListener('click', function(){
+    if(backdrop.classList.contains('show')) closeNav(); else openNav();
+  });
+  backdrop.addEventListener('click', closeNav);
+  snLinks.forEach(function(a){
+    a.addEventListener('click', function(){ if(window.innerWidth < 1200) closeNav(); });
+  });
+
+  /* ---------- to top ---------- */
+  var tt = document.getElementById('totop');
+  window.addEventListener('scroll', function(){
+    tt.classList.toggle('show', window.scrollY > 500);
+  });
+  tt.addEventListener('click', function(){ window.scrollTo({ top:0, behavior:'smooth' }); });
+})();
+</script>
+</body>
+</html>
