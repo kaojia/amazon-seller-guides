@@ -6,27 +6,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0B2138; --line:rgba(255,255,255,.14); --muted:#9FB6CE;
+  --ink:#0B2138; --line:rgba(11,33,56,.12); --muted:#5B7288;
 }
 *{box-sizing:border-box}
 body{
   margin:0;min-height:100vh;padding:48px 20px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#fff;
+  font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;color:var(--ink);
   background:
-    radial-gradient(1200px 600px at 15% -10%,rgba(56,132,208,.35),transparent 60%),
-    radial-gradient(900px 500px at 100% 110%,rgba(20,90,150,.4),transparent 55%),
-    linear-gradient(160deg,#0A2540,#0E3357 55%,#0A2033);
+    radial-gradient(1200px 600px at 12% -12%,rgba(120,190,255,.45),transparent 60%),
+    radial-gradient(900px 520px at 100% 112%,rgba(150,205,255,.5),transparent 55%),
+    linear-gradient(160deg,#F4F9FF,#E7F1FB 55%,#DDEBF8);
   background-attachment:fixed;
 }
 .wrap{width:100%;max-width:940px;text-align:center}
 .badge{
   display:inline-flex;align-items:center;gap:8px;
   padding:6px 14px;border:1px solid var(--line);border-radius:999px;
-  font-size:12.5px;letter-spacing:.06em;color:var(--muted);
-  background:rgba(255,255,255,.05);backdrop-filter:blur(6px);margin-bottom:22px;
+  font-size:12.5px;letter-spacing:.06em;color:#3A6E9E;
+  background:rgba(255,255,255,.7);backdrop-filter:blur(6px);margin-bottom:22px;
 }
-.badge b{color:#fff;font-weight:700}
+.badge b{color:var(--ink);font-weight:700}
 h1{font-size:clamp(26px,4.6vw,40px);line-height:1.2;margin:0 0 10px;font-weight:900;letter-spacing:.01em}
 .lead{color:var(--muted);margin:0 auto 38px;max-width:520px;font-size:15px;line-height:1.7}
 .panel{padding:0}
