@@ -29,24 +29,30 @@ body{
 .badge b{color:#fff;font-weight:700}
 h1{font-size:clamp(26px,4.6vw,40px);line-height:1.2;margin:0 0 10px;font-weight:900;letter-spacing:.01em}
 .lead{color:var(--muted);margin:0 auto 38px;max-width:520px;font-size:15px;line-height:1.7}
+.panel{
+  background:rgba(6,20,36,.55);
+  border:1px solid var(--line);border-radius:24px;
+  padding:26px;backdrop-filter:blur(10px);
+  box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 30px 60px -30px rgba(0,0,0,.75);
+}
 .grid{
   display:grid;gap:18px;
-  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 }
 a.card{
   position:relative;overflow:hidden;
   display:flex;flex-direction:column;align-items:flex-start;gap:4px;
   padding:24px 24px 22px;text-align:left;text-decoration:none;color:#fff;
-  background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.05));
-  border:1px solid var(--line);border-radius:18px;
-  box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 12px 30px -18px rgba(0,0,0,.7);
+  background:linear-gradient(180deg,#1B3A5C,#12314F);
+  border:1px solid rgba(255,255,255,.1);border-radius:16px;
+  box-shadow:0 1px 0 rgba(255,255,255,.08) inset,0 10px 24px -16px rgba(0,0,0,.65);
   transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease;
 }
 a.card:hover{
   transform:translateY(-4px);
-  border-color:rgba(120,190,255,.55);
-  background:linear-gradient(180deg,rgba(255,255,255,.17),rgba(255,255,255,.07));
-  box-shadow:0 1px 0 rgba(255,255,255,.1) inset,0 22px 44px -20px rgba(0,0,0,.8);
+  border-color:rgba(120,190,255,.65);
+  background:linear-gradient(180deg,#204670,#163B5E);
+  box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 22px 44px -18px rgba(0,0,0,.8);
 }
 a.card .flag{font-size:34px;line-height:1;margin-bottom:8px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.35))}
 a.card .name{font-size:19px;font-weight:700}
@@ -64,7 +70,7 @@ a.card:hover .go{gap:11px}
   <span class="badge">🧭 <b>台灣賣家跨境開站</b> · 單頁式經營手冊</span>
   <h1>亞馬遜賣家經營指導手冊</h1>
   <p class="lead">從註冊 KYC、稅務成本到 FBA 與大促檔期，選擇你的站點，取得完整的開站路徑圖。</p>
-  <div class="grid">
+  <div class="panel"><div class="grid">
     <a class="card" href="https://hsinyi94.github.io/amazon-jp-seller-guide">
       <span class="flag">🇯🇵</span><span class="name">日本站</span>
       <span class="sub">amazon.co.jp</span><span class="go">開始閱讀 →</span>
@@ -81,7 +87,7 @@ a.card:hover .go{gap:11px}
       <span class="flag">🇦🇪🇸🇦</span><span class="name">中東站</span>
       <span class="sub">阿聯 AE / 沙烏地 SA</span><span class="go">開始閱讀 →</span>
     </a>
-  </div>
+  </div></div>
   <p class="foot">本手冊為亞馬遜客戶經理為輔導客戶額外整理之參考資料，不代表亞馬遜官方立場，亦不構成法律、稅務或合規意見。所有費率、優惠、大促日期與法規時程請以賣家後台、官方公告及當地主管機關最新公告為準。</p>
 </div>
 </body></html>
