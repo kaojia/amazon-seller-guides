@@ -46,16 +46,17 @@ a.card{
 }
 a.card::before{
   content:"";position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(180deg,rgba(6,20,36,.15) 0%,rgba(6,20,36,.35) 45%,rgba(6,20,36,.82) 100%);
+  background:linear-gradient(180deg,rgba(6,20,36,0) 0%,rgba(6,20,36,.12) 52%,rgba(6,20,36,.62) 100%);
   transition:background .22s ease;
 }
 a.card::after{
   content:"";position:absolute;inset:0;z-index:-2;
   background-size:cover;background-position:center;background-image:inherit;
+  filter:brightness(1.1) saturate(1.05);
   transform:scale(1);transition:transform .5s ease;
 }
 a.card:hover{transform:translateY(-4px);box-shadow:0 26px 50px -22px rgba(0,0,0,.85)}
-a.card:hover::before{background:linear-gradient(180deg,rgba(6,20,36,.1) 0%,rgba(6,20,36,.3) 45%,rgba(6,20,36,.75) 100%)}
+a.card:hover::before{background:linear-gradient(180deg,rgba(6,20,36,0) 0%,rgba(6,20,36,.08) 52%,rgba(6,20,36,.55) 100%)}
 a.card:hover::after{transform:scale(1.06)}
 a.card.jp{background-image:url(assets/jp.jpg)}
 a.card.eu{background-image:url(assets/eu.jpg)}
