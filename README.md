@@ -1,6 +1,6 @@
 # 亞馬遜賣家經營指導手冊
 
-台灣賣家開站用的單頁式經營手冊（純靜態 HTML，內含即時搜尋、身分／階段篩選、進度勾選、互動小工具），目前涵蓋澳洲站與中東站。
+台灣賣家開站用的單頁式經營手冊（純靜態 HTML，內含即時搜尋、身分／階段篩選、進度勾選、互動小工具），目前涵蓋澳洲站、中東站、日本站與歐洲站。
 
 ## 🔗 線上網址
 
@@ -9,8 +9,12 @@
 | 🏠 總入口（選站頁） | https://kaojia.github.io/amazon-seller-guides/ |
 | 🇦🇺 澳洲站手冊 | https://kaojia.github.io/amazon-seller-guides/au-seller-guide/ |
 | 🌐 中東站手冊（阿聯 AE／沙烏地 SA） | https://kaojia.github.io/amazon-seller-guides/mena-seller-guide/ |
+| 🇯🇵 日本站手冊 | https://hsinyi94.github.io/amazon-jp-seller-guide |
+| 🇪🇺 歐洲站手冊 | https://eddiechu1009-bit.github.io/amazon-eu-seller-guide/ |
 
-兩站頁首皆有「切換站點」按鈕可互相跳轉。
+各站頁首皆有「切換站點」按鈕可互相跳轉，並可「🏠 回到目錄」返回總入口。
+
+> 註：日本站與歐洲站手冊由其他帳號的獨立倉庫部署，本倉庫僅在目錄與切換列連結過去；該兩站頁面本身是否有「回到目錄」連結，需由各自倉庫維護者加入。
 
 ## 📦 內容涵蓋
 
