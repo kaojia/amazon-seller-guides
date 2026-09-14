@@ -10,8 +10,8 @@
 }
 *{box-sizing:border-box}
 body{
-  margin:0;min-height:100vh;padding:48px 20px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  margin:0;min-height:100vh;padding:0;
+  display:flex;flex-direction:column;align-items:center;
   font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;color:var(--ink);
   background:
     radial-gradient(1200px 600px at 12% -12%,rgba(120,190,255,.45),transparent 60%),
@@ -19,7 +19,9 @@ body{
     linear-gradient(160deg,#F4F9FF,#E7F1FB 55%,#DDEBF8);
   background-attachment:fixed;
 }
-.wrap{width:100%;max-width:940px;text-align:center}
+.wrap{width:100%;max-width:none;text-align:center}
+.hd{padding:44px 20px 24px}
+.foot{padding:0 20px 40px}
 .badge{
   display:inline-flex;align-items:center;gap:8px;
   padding:6px 14px;border:1px solid var(--line);border-radius:999px;
@@ -29,20 +31,18 @@ body{
 .badge b{color:var(--ink);font-weight:700}
 h1{font-size:clamp(26px,4.6vw,40px);line-height:1.2;margin:0 0 10px;font-weight:900;letter-spacing:.01em}
 .lead{color:var(--muted);margin:0 auto 38px;max-width:520px;font-size:15px;line-height:1.7}
-.panel{padding:0}
+.panel{padding:0;width:100%}
 .grid{
-  display:grid;gap:18px;
-  grid-template-columns:repeat(2,1fr);
+  display:flex;flex-direction:column;gap:0;width:100%;
 }
 a.card{
   position:relative;overflow:hidden;isolation:isolate;
   display:flex;flex-direction:column;justify-content:flex-end;gap:2px;
-  min-height:210px;padding:22px 24px 20px;
+  min-height:23vh;padding:26px clamp(22px,6vw,90px) 26px;
   text-align:left;text-decoration:none;color:#fff;
-  border:1px solid rgba(255,255,255,.16);border-radius:18px;
+  border:0;border-radius:0;
   background-size:cover;background-position:center;
-  box-shadow:0 14px 34px -20px rgba(0,0,0,.8);
-  transition:transform .22s ease,box-shadow .22s ease;
+  transition:box-shadow .22s ease;
 }
 a.card::before{
   content:"";position:absolute;inset:0;z-index:-1;
@@ -55,9 +55,8 @@ a.card::after{
   filter:brightness(1.1) saturate(1.05);
   transform:scale(1);transition:transform .5s ease;
 }
-a.card:hover{transform:translateY(-4px);box-shadow:0 26px 50px -22px rgba(0,0,0,.85)}
-a.card:hover::before{background:linear-gradient(180deg,rgba(6,20,36,0) 0%,rgba(6,20,36,.08) 52%,rgba(6,20,36,.55) 100%)}
-a.card:hover::after{transform:scale(1.06)}
+a.card:hover::before{background:linear-gradient(180deg,rgba(6,20,36,0) 0%,rgba(6,20,36,.08) 52%,rgba(6,20,36,.5) 100%)}
+a.card:hover::after{transform:scale(1.05)}
 a.card.jp{background-image:url(assets/jp.jpg)}
 a.card.eu{background-image:url(assets/eu.jpg)}
 a.card.au{background-image:url(assets/au.jpg)}
@@ -71,14 +70,16 @@ a.card .go{
   text-shadow:0 1px 6px rgba(0,0,0,.6);transition:gap .18s ease;
 }
 a.card:hover .go{gap:11px}
-.foot{margin-top:40px;color:var(--muted);font-size:11.5px;line-height:1.7;max-width:640px;opacity:.85}
+.foot{margin:32px auto 0;color:var(--muted);font-size:11.5px;line-height:1.7;max-width:640px;opacity:.85}
 .foot a{color:inherit;text-decoration:underline;text-underline-offset:2px}
-@media(max-width:560px){body{padding:32px 16px}.grid{grid-template-columns:1fr}a.card{min-height:170px}}
+@media(max-width:560px){.hd{padding:32px 16px 18px}a.card{min-height:26vh}}
 </style></head><body>
 <div class="wrap">
-  <span class="badge">🧭 <b>台灣賣家跨境開站</b> · 單頁式經營手冊</span>
-  <h1>亞馬遜賣家經營指導手冊</h1>
-  <p class="lead">從註冊 KYC、稅務成本到 FBA 與大促檔期，選擇你的站點，取得完整的開站路徑圖。</p>
+  <div class="hd">
+    <span class="badge">🧭 <b>台灣賣家跨境開站</b> · 單頁式經營手冊</span>
+    <h1>亞馬遜賣家經營指導手冊</h1>
+    <p class="lead">從註冊 KYC、稅務成本到 FBA 與大促檔期，選擇你的站點，取得完整的開站路徑圖。</p>
+  </div>
   <div class="panel"><div class="grid">
     <a class="card jp" href="https://hsinyi94.github.io/amazon-jp-seller-guide">
       <span class="flag">🇯🇵</span><span class="name">日本站</span>
