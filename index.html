@@ -29,65 +29,73 @@ body{
 .badge b{color:#fff;font-weight:700}
 h1{font-size:clamp(26px,4.6vw,40px);line-height:1.2;margin:0 0 10px;font-weight:900;letter-spacing:.01em}
 .lead{color:var(--muted);margin:0 auto 38px;max-width:520px;font-size:15px;line-height:1.7}
-.panel{
-  background:rgba(6,20,36,.55);
-  border:1px solid var(--line);border-radius:24px;
-  padding:26px;backdrop-filter:blur(10px);
-  box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 30px 60px -30px rgba(0,0,0,.75);
-}
+.panel{padding:0}
 .grid{
   display:grid;gap:18px;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  grid-template-columns:repeat(2,1fr);
 }
 a.card{
-  position:relative;overflow:hidden;
-  display:flex;flex-direction:column;align-items:flex-start;gap:4px;
-  padding:24px 24px 22px;text-align:left;text-decoration:none;color:var(--ink);
-  background:rgba(255,255,255,.82);backdrop-filter:blur(8px);
-  border:1px solid rgba(255,255,255,.5);border-radius:16px;
-  box-shadow:0 10px 24px -16px rgba(0,0,0,.5);
-  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease;
+  position:relative;overflow:hidden;isolation:isolate;
+  display:flex;flex-direction:column;justify-content:flex-end;gap:2px;
+  min-height:210px;padding:22px 24px 20px;
+  text-align:left;text-decoration:none;color:#fff;
+  border:1px solid rgba(255,255,255,.16);border-radius:18px;
+  background-size:cover;background-position:center;
+  box-shadow:0 14px 34px -20px rgba(0,0,0,.8);
+  transition:transform .22s ease,box-shadow .22s ease;
 }
-a.card:hover{
-  transform:translateY(-4px);
-  background:rgba(255,255,255,.92);
-  border-color:rgba(255,255,255,.8);
-  box-shadow:0 22px 44px -18px rgba(0,0,0,.6);
+a.card::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(6,20,36,.15) 0%,rgba(6,20,36,.35) 45%,rgba(6,20,36,.82) 100%);
+  transition:background .22s ease;
 }
-a.card .flag{font-size:34px;line-height:1;margin-bottom:8px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.18))}
-a.card .name{font-size:19px;font-weight:700;color:var(--ink)}
-a.card .sub{font-size:12.5px;font-weight:400;color:#5B7288;line-height:1.5}
+a.card::after{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background-size:cover;background-position:center;background-image:inherit;
+  transform:scale(1);transition:transform .5s ease;
+}
+a.card:hover{transform:translateY(-4px);box-shadow:0 26px 50px -22px rgba(0,0,0,.85)}
+a.card:hover::before{background:linear-gradient(180deg,rgba(6,20,36,.1) 0%,rgba(6,20,36,.3) 45%,rgba(6,20,36,.75) 100%)}
+a.card:hover::after{transform:scale(1.06)}
+a.card.jp{background-image:url(assets/jp.jpg)}
+a.card.eu{background-image:url(assets/eu.jpg)}
+a.card.au{background-image:url(assets/au.jpg)}
+a.card.me{background-image:url(assets/me.jpg)}
+a.card .flag{font-size:30px;line-height:1;margin-bottom:6px;filter:drop-shadow(0 3px 6px rgba(0,0,0,.5))}
+a.card .name{font-size:21px;font-weight:900;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+a.card .sub{font-size:13px;font-weight:400;color:#DCE7F2;text-shadow:0 1px 6px rgba(0,0,0,.6);line-height:1.5}
 a.card .go{
-  margin-top:14px;font-size:13px;font-weight:600;color:#1E6FB8;
+  margin-top:12px;font-size:13px;font-weight:700;color:#fff;
   display:inline-flex;align-items:center;gap:6px;
-  transition:gap .18s ease;
+  text-shadow:0 1px 6px rgba(0,0,0,.6);transition:gap .18s ease;
 }
 a.card:hover .go{gap:11px}
 .foot{margin-top:40px;color:var(--muted);font-size:11.5px;line-height:1.7;max-width:640px;opacity:.85}
-@media(max-width:520px){body{padding:32px 16px}}
+.foot a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:560px){body{padding:32px 16px}.grid{grid-template-columns:1fr}a.card{min-height:170px}}
 </style></head><body>
 <div class="wrap">
   <span class="badge">🧭 <b>台灣賣家跨境開站</b> · 單頁式經營手冊</span>
   <h1>亞馬遜賣家經營指導手冊</h1>
   <p class="lead">從註冊 KYC、稅務成本到 FBA 與大促檔期，選擇你的站點，取得完整的開站路徑圖。</p>
   <div class="panel"><div class="grid">
-    <a class="card" href="https://hsinyi94.github.io/amazon-jp-seller-guide">
+    <a class="card jp" href="https://hsinyi94.github.io/amazon-jp-seller-guide">
       <span class="flag">🇯🇵</span><span class="name">日本站</span>
       <span class="sub">amazon.co.jp</span><span class="go">開始閱讀 →</span>
     </a>
-    <a class="card" href="https://eddiechu1009-bit.github.io/amazon-eu-seller-guide/">
+    <a class="card eu" href="https://eddiechu1009-bit.github.io/amazon-eu-seller-guide/">
       <span class="flag">🇪🇺</span><span class="name">歐洲站</span>
       <span class="sub">DE / FR / IT / ES / NL 等</span><span class="go">開始閱讀 →</span>
     </a>
-    <a class="card" href="./au-seller-guide/">
+    <a class="card au" href="./au-seller-guide/">
       <span class="flag">🇦🇺</span><span class="name">澳洲站</span>
       <span class="sub">amazon.com.au</span><span class="go">開始閱讀 →</span>
     </a>
-    <a class="card" href="./mena-seller-guide/">
+    <a class="card me" href="./mena-seller-guide/">
       <span class="flag">🇦🇪🇸🇦</span><span class="name">中東站</span>
       <span class="sub">阿聯 AE / 沙烏地 SA</span><span class="go">開始閱讀 →</span>
     </a>
   </div></div>
-  <p class="foot">本手冊為亞馬遜客戶經理為輔導客戶額外整理之參考資料，不代表亞馬遜官方立場，亦不構成法律、稅務或合規意見。所有費率、優惠、大促日期與法規時程請以賣家後台、官方公告及當地主管機關最新公告為準。</p>
+  <p class="foot">本手冊為亞馬遜客戶經理為輔導客戶額外整理之參考資料，不代表亞馬遜官方立場，亦不構成法律、稅務或合規意見。所有費率、優惠、大促日期與法規時程請以賣家後台、官方公告及當地主管機關最新公告為準。<br>卡片背景圖來源：Wikimedia Commons（富士山 CC BY-SA 4.0／艾菲爾鐵塔 公有領域／雪梨歌劇院 CC BY-SA 3.0／杜拜哈里發塔 CC BY-SA 3.0）。</p>
 </div>
 </body></html>
