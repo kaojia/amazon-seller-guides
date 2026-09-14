@@ -1,26 +1,87 @@
 <!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>亞馬遜賣家經營手冊</title>
+<title>亞馬遜賣家經營指導手冊</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
-body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(160deg,#0F2E4C,#1B4771);font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#fff}
-.box{text-align:center;padding:24px}
-h1{font-size:24px;margin-bottom:6px}p{color:#C6D6E6;margin-top:0}
-.grid{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:26px}
-a.card{display:block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);
-  border-radius:14px;padding:26px 34px;text-decoration:none;color:#fff;font-size:18px;font-weight:700;min-width:200px}
-a.card:hover{background:rgba(255,255,255,.2)}
-a.card span{display:block;font-size:13px;font-weight:400;color:#C6D6E6;margin-top:6px}
-</style></head><body><div class="box">
+:root{
+  --ink:#0B2138; --line:rgba(255,255,255,.14); --muted:#9FB6CE;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;padding:48px 20px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#fff;
+  background:
+    radial-gradient(1200px 600px at 15% -10%,rgba(56,132,208,.35),transparent 60%),
+    radial-gradient(900px 500px at 100% 110%,rgba(20,90,150,.4),transparent 55%),
+    linear-gradient(160deg,#0A2540,#0E3357 55%,#0A2033);
+  background-attachment:fixed;
+}
+.wrap{width:100%;max-width:940px;text-align:center}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 14px;border:1px solid var(--line);border-radius:999px;
+  font-size:12.5px;letter-spacing:.06em;color:var(--muted);
+  background:rgba(255,255,255,.05);backdrop-filter:blur(6px);margin-bottom:22px;
+}
+.badge b{color:#fff;font-weight:700}
+h1{font-size:clamp(26px,4.6vw,40px);line-height:1.2;margin:0 0 10px;font-weight:900;letter-spacing:.01em}
+.lead{color:var(--muted);margin:0 auto 38px;max-width:520px;font-size:15px;line-height:1.7}
+.grid{
+  display:grid;gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+}
+a.card{
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;align-items:flex-start;gap:4px;
+  padding:24px 24px 22px;text-align:left;text-decoration:none;color:#fff;
+  background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.05));
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 12px 30px -18px rgba(0,0,0,.7);
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease;
+}
+a.card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(120,190,255,.55);
+  background:linear-gradient(180deg,rgba(255,255,255,.17),rgba(255,255,255,.07));
+  box-shadow:0 1px 0 rgba(255,255,255,.1) inset,0 22px 44px -20px rgba(0,0,0,.8);
+}
+a.card .flag{font-size:34px;line-height:1;margin-bottom:8px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.35))}
+a.card .name{font-size:19px;font-weight:700}
+a.card .sub{font-size:12.5px;font-weight:400;color:var(--muted);line-height:1.5}
+a.card .go{
+  margin-top:14px;font-size:13px;font-weight:500;color:#8FC6FF;
+  display:inline-flex;align-items:center;gap:6px;
+  transition:gap .18s ease;
+}
+a.card:hover .go{gap:11px}
+.foot{margin-top:40px;color:var(--muted);font-size:11.5px;line-height:1.7;max-width:640px;opacity:.85}
+@media(max-width:520px){body{padding:32px 16px}}
+</style></head><body>
+<div class="wrap">
+  <span class="badge">🧭 <b>台灣賣家跨境開站</b> · 單頁式經營手冊</span>
   <h1>亞馬遜賣家經營指導手冊</h1>
-  <p>選擇你的站點</p>
+  <p class="lead">從註冊 KYC、稅務成本到 FBA 與大促檔期，選擇你的站點，取得完整的開站路徑圖。</p>
   <div class="grid">
-    <a class="card" href="https://hsinyi94.github.io/amazon-jp-seller-guide">🇯🇵 日本站<span>amazon.co.jp</span></a>
-    <a class="card" href="https://eddiechu1009-bit.github.io/amazon-eu-seller-guide/">🇪🇺 歐洲站<span>DE / FR / IT / ES / NL 等</span></a>
-    <a class="card" href="./au-seller-guide/">🇦🇺 澳洲站<span>amazon.com.au</span></a>
-    <a class="card" href="./mena-seller-guide/">🌐 中東站<span>阿聯 AE / 沙烏地 SA</span></a>
+    <a class="card" href="https://hsinyi94.github.io/amazon-jp-seller-guide">
+      <span class="flag">🇯🇵</span><span class="name">日本站</span>
+      <span class="sub">amazon.co.jp</span><span class="go">開始閱讀 →</span>
+    </a>
+    <a class="card" href="https://eddiechu1009-bit.github.io/amazon-eu-seller-guide/">
+      <span class="flag">🇪🇺</span><span class="name">歐洲站</span>
+      <span class="sub">DE / FR / IT / ES / NL 等</span><span class="go">開始閱讀 →</span>
+    </a>
+    <a class="card" href="./au-seller-guide/">
+      <span class="flag">🇦🇺</span><span class="name">澳洲站</span>
+      <span class="sub">amazon.com.au</span><span class="go">開始閱讀 →</span>
+    </a>
+    <a class="card" href="./mena-seller-guide/">
+      <span class="flag">🌐</span><span class="name">中東站</span>
+      <span class="sub">阿聯 AE / 沙烏地 SA</span><span class="go">開始閱讀 →</span>
+    </a>
   </div>
-</div></body></html>
+  <p class="foot">本手冊為亞馬遜客戶經理為輔導客戶額外整理之參考資料，不代表亞馬遜官方立場，亦不構成法律、稅務或合規意見。所有費率、優惠、大促日期與法規時程請以賣家後台、官方公告及當地主管機關最新公告為準。</p>
+</div>
+</body></html>
