@@ -87,7 +87,7 @@ a.card:hover .go{gap:11px}
       <span class="flag">🇯🇵</span><span class="name">日本站</span>
       <span class="sub">amazon.co.jp</span><span class="go">開始閱讀 →</span>
     </a>
-    <a class="card eu" href="https://eddiechu1009-bit.github.io/amazon-eu-seller-guide/">
+    <a class="card eu" id="euLink" href="https://eddiechu1009-bit.github.io/amazon-eu-seller-guide/">
       <span class="flag">🇪🇺</span><span class="name">歐洲站</span>
       <span class="sub">DE / FR / IT / ES / NL 等</span><span class="go">開始閱讀 →</span>
     </a>
@@ -102,4 +102,17 @@ a.card:hover .go{gap:11px}
   </div></div>
   <p class="foot">本手冊為亞馬遜客戶經理為輔導客戶額外整理之參考資料，不代表亞馬遜官方立場，亦不構成法律、稅務或合規意見。所有費率、優惠、大促日期與法規時程請以賣家後台、官方公告及當地主管機關最新公告為準。<br>卡片背景圖來源：Wikimedia Commons（富士山 CC BY-SA 4.0／巴黎羅浮宮 CC0／雪梨歌劇院 CC BY-SA 3.0／杜拜哈里發塔 CC BY-SA 3.0）。</p>
 </div>
+<script>
+// 歐洲站手冊依 ?am= 切換；新增人員只要在這裡加一行
+var EU_GUIDES = {
+  jenny: 'https://kaojia.github.io/eu-guide/',
+  eddie: 'https://eddiechu1009-bit.github.io/amazon-eu-seller-guide/'
+};
+var EU_DEFAULT = 'eddie';
+(function(){
+  var am = (new URLSearchParams(location.search).get('am') || '').toLowerCase();
+  var key = Object.prototype.hasOwnProperty.call(EU_GUIDES, am) ? am : EU_DEFAULT;
+  document.getElementById('euLink').href = EU_GUIDES[key];
+})();
+</script>
 </body></html>
