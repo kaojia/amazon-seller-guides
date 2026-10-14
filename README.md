@@ -10,11 +10,27 @@
 | 🇦🇺 澳洲站手冊 | https://kaojia.github.io/amazon-seller-guides/au-seller-guide/ |
 | 🌐 中東站手冊（阿聯 AE／沙烏地 SA） | https://kaojia.github.io/amazon-seller-guides/mena-seller-guide/ |
 | 🇯🇵 日本站手冊 | https://hsinyi94.github.io/amazon-jp-seller-guide |
-| 🇪🇺 歐洲站手冊 | https://eddiechu1009-bit.github.io/amazon-eu-seller-guide/ |
+| 🇪🇺 歐洲站手冊（Jenny 版） | https://kaojia.github.io/eu-guide/ （倉庫 [kaojia/eu-guide](https://github.com/kaojia/eu-guide)） |
+| 🇪🇺 歐洲站手冊（Eddie 版） | https://eddiechu1009-bit.github.io/amazon-eu-seller-guide/ |
 
 各站頁首皆有「切換站點」按鈕可互相跳轉，並可「🏠 回到目錄」返回總入口。
 
-> 註：日本站與歐洲站手冊由其他帳號的獨立倉庫部署，本倉庫僅在目錄與切換列連結過去；該兩站頁面本身是否有「回到目錄」連結，需由各自倉庫維護者加入。
+> 註：日本站與 Eddie 版歐洲站手冊由其他帳號的獨立倉庫部署，本倉庫僅在目錄與切換列連結過去；該兩站頁面本身是否有「回到目錄」連結，需由各自倉庫維護者加入。Jenny 版歐洲站（kaojia/eu-guide）已內建切換列。
+
+## 🔀 歐洲站連結依 `?am=` 參數切換
+
+總入口的「歐洲站」卡片會依網址參數 `am`（客戶經理代號）連到對應的歐洲站手冊，其他站點連結不受影響。
+
+| 發給賣家的連結 | 歐洲站卡片連到 |
+|---|---|
+| https://kaojia.github.io/amazon-seller-guides/?am=jenny | Jenny 版 |
+| https://kaojia.github.io/amazon-seller-guides/?am=eddie | Eddie 版 |
+| 不帶參數，或代號不在對照表內 | 預設（目前為 Eddie 版） |
+
+- 對照表集中在 `index.html` 底部 `<script>` 的 `EU_GUIDES` 物件，預設值為 `EU_DEFAULT`。
+- **新增人員**：在 `EU_GUIDES` 加一行 `代號: '歐洲站網址',`（代號用小寫英文，比對時不分大小寫）。
+- 參數只用來比對對照表，不會插入頁面內容。
+- 澳洲站、中東站、Jenny 版歐洲站的「🏠 回到目錄」一律連到 `?am=jenny`，賣家從這些頁面回目錄後點歐洲站仍會回到 Jenny 版。
 
 ## 📦 內容涵蓋
 
